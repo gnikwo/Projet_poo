@@ -18,9 +18,7 @@ public class ProjetPOO {
      */
     public static void main(String[] args) {
 
-        Lac l = new Lac(1500, 900, "Lac");
-
-         
+        Lac l = new Lac(1920, 1080, "Lac");
         l.run();
     }
 
