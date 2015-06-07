@@ -32,6 +32,12 @@ public final class Sediment extends ObjetImmobile {
         super(g,"Sprites/sediment",0, 0);
     }
 
+    public void addMatiere(int q){
+
+        quantite += q;
+
+    }
+    
     public void quantiteCourante() {
     }
 

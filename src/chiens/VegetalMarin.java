@@ -2,6 +2,8 @@ package chiens;
 
 import iut.Objet;
 import iut.World;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
 * Classe permettant de gérer les VégétauxMarins tout ce qu'ils font ou peuvent faire.
@@ -32,6 +34,7 @@ public class VegetalMarin extends ObjetImmobile {
       super(g, "Sprites/vegetal_marin", x, y);
       vitaliteMax = 120;
       vitalite = 120;
+      ageMax = 100;
       
     }
 
@@ -42,19 +45,26 @@ public class VegetalMarin extends ObjetImmobile {
     @Override
     public void evoluate(long dt) {
         
+        age ++;
         
-        if(this.vitalite >= 30){
+        if(age<=50){
+            if(this.vitalite >= 30){
  
-            this.clonage();
+                this.clonage();
     
-        }  
+            }  
+        }
+        
+        if(this.age==ageMax){
+            this.estMort();
+        }
         
         
-       /* if(this.vitalite <= 0){
+        if(this.vitalite <= 0){
   
             this.estMort();
   
-        }*/
+        }
         
         
     }
@@ -62,7 +72,18 @@ public class VegetalMarin extends ObjetImmobile {
     /**
     * Procédure permettant de faire mourir le végétal marin.
     */
+    @Override
     public void estMort() {
+        
+        Sediment.getInstance().addMatiere(10);
+        
+        try {
+            Lac.getInstance().remove(this);
+            this.finalize();
+        } catch (Throwable ex) {
+            Logger.getLogger(ObjetBase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         
     }
 
@@ -89,7 +110,7 @@ public class VegetalMarin extends ObjetImmobile {
     */
     public void clonage() {
    
-        while(vitalite>= 30){
+        if(age>= 50){
         Lac.getInstance().add(new VegetalMarin(Lac.getInstance(), this.getLeft() + 20, this.getTop()));
         vitalite -= vitaliteMax*0.3;
         }
