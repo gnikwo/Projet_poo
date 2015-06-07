@@ -24,4 +24,8 @@ public class OtocinclusAffinis extends Omnivore {
     public Type getType() {
             return Type.OtocinclusAffinis;
     }
+
+    @Override
+    protected void mettreBas() {
+    }
 }

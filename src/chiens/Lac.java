@@ -10,9 +10,11 @@ import javax.imageio.ImageIO;
 /**
  * Classe représentant le lac ou l'aquarium dans lequel les animaux vont évoluer
  */
-public class Lac extends World {
+public final class Lac extends World {
 
-    public Lac(int largeur, int hauteur, String title) {
+    public static Lac instance;
+    
+    private Lac(int largeur, int hauteur, String title) {
         super(largeur, hauteur, title);
     }
 
@@ -31,6 +33,15 @@ public class Lac extends World {
         }
     }
 
+    public static Lac getInstance(){
+        
+       if(Lac.instance == null)
+           instance = new Lac(1820, 980, "Lac");
+        
+       return instance;
+      
+    }
+    
     /**
      * créé les objets de départ du monde
      */
@@ -45,14 +56,20 @@ public class Lac extends World {
         this.add(new Caneton(this,80,85));
         this.add(new Ecrevisse(this,90,95));
         this.add(new Ecrevisse(this,100,105));
-        this.add(new GrandBrochet(this,110,115));
-        this.add(new GrandBrochet(this,120,125));
-        this.add(new Maskinonge(this,130,135));
-        this.add(new Maskinonge(this,140,145));
+        
+        GrandBrochet g2 = new GrandBrochet(this,110,115);
+        g2.sexe = Sexe.Male;
+        this.add(g2);
+        GrandBrochet g = new GrandBrochet(this,500,125);
+        g.setVitesseX(-3);
+        g.sexe = Sexe.Femelle;
+        this.add(g);
+        //this.add(new Maskinonge(this,130,135));
+        //this.add(new Maskinonge(this,140,145));
         this.add(new OtocinclusAffinis(this,150,155));
         this.add(new OtocinclusAffinis(this,160,165));
-        this.add(new VegetalMarin(this, 600,450));
-        this.add(new VegetalMarin(this,150,450));
+        //this.add(new VegetalMarin(this, 600,450));
+        //this.add(new VegetalMarin(this,150,450));
         //this.add(Sediment.getInstance());
        // this.add(Sediment.getInstance());
 

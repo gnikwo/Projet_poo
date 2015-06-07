@@ -67,16 +67,6 @@ public final class Sediment extends ObjetImmobile {
     }
 
     /**
-     * Déplace l'objet
-     *
-     * @param dt le temps écoulé en millisecondes depuis le précédent
-     * déplacement
-     */
-    @Override
-    public void move(long dt) {
-    }
-
-    /**
      * Permet d'accéder aux variables contenu dans l'énumération Type.
      * @return 
      */

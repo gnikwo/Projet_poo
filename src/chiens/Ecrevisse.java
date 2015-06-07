@@ -33,4 +33,16 @@ public class Ecrevisse extends Detritivore {
     @Override
     public void effect(Objet objet) {
     }
+    
+    /**
+    * Créé un nouvel animal + fait consommer de l'énergie vitale à la mère
+    */
+    @Override
+    protected void mettreBas() {  
+    
+        l.add(new Ecrevisse(this.l, this.getLeft(), this.getTop()));
+        this.vitalite -= this.vitaliteMax*0.1;
+        
+    }
+    
 }

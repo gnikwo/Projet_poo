@@ -26,6 +26,10 @@ public abstract class Carnivore extends Animal {
         _listeAlimentation.add(TypeAlimentation.OtocinclusAffinis);
         _listeAlimentation.add(TypeAlimentation.Planorbe);
         _listeAlimentation.add(TypeAlimentation.Ecrevisse);
+        
+        _listeReproduction.add(Type.GrandBrochet);
+        _listeReproduction.add(Type.Maskinonge);
+        
     }
 
     /**
@@ -34,6 +38,7 @@ public abstract class Carnivore extends Animal {
      */
     @Override
     public void move(long dt) {
+        
         this.move(vitesseX, vitesseY);
     }
 

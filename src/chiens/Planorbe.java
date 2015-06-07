@@ -33,4 +33,8 @@ public class Planorbe extends Detritivore {
     @Override
     public void effect(Objet objet) {
     }
+
+    @Override
+    protected void mettreBas() {
+    }
 }

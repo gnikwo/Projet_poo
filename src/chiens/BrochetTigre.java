@@ -21,6 +21,15 @@ public class BrochetTigre extends Carnivore {
     }
 
     /**
+    * Créé un nouvel animal + fait consommer de l'énergie vitale à la mère
+    */
+    protected void mettreBas() {  
+    
+        
+        
+    }
+    
+    /**
      * Permet d'accéder aux variables contenu dans l'énumération Type.
      * @return 
      */

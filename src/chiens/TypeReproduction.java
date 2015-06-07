@@ -5,5 +5,4 @@ package chiens;
  */
 public enum TypeReproduction {
 	Maskinonge, GrandBrochet, OtocinclusAffinis, Planorbe, BrochetTigre, Ecrevisse, Caneton;
-	public Animal unnamed_Animal_;
 }

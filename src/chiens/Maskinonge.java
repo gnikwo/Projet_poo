@@ -28,4 +28,9 @@ public class Maskinonge extends Carnivore {
     @Override
     public void effect(Objet objet) {
     }
+
+    @Override
+    protected void mettreBas() {
+        
+    }
 }

@@ -26,4 +26,8 @@ public class Caneton extends Herbivore {
     public Type getType() {
             return Type.Caneton;
     }
+
+    @Override
+    protected void mettreBas() {
+    }
 }
