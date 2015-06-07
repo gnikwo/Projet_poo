@@ -34,7 +34,7 @@ public abstract class Animal extends ObjetDeplacable {
     /**
      * Stocke le temps de gestation courant de l'animal
      */
-    protected int tpsGestation = 499;
+    protected int tpsGestation = 0;
     /**
      * Borne à atteindre avant de pouvoir remettre à bas
      */
@@ -87,11 +87,12 @@ public abstract class Animal extends ObjetDeplacable {
     public void evoluate(long dt) {
         
         if(this.gestation)
-            this.tpsGestation += dt;
+            this.tpsGestation += 10;
         
         if(this.tpsGestation >= this.tpsGestationMax){
             
             this.mettreBas();
+            this.tpsGestation = 0;
             this.tpsDepuisBas = 0;
             this.gestation = false;
             
@@ -176,7 +177,7 @@ public abstract class Animal extends ObjetDeplacable {
      * @return
      */
     protected boolean phaseReprod() {
-        return this.phaseReprod();
+        return (this.tpsDepuisBas >= this.tpsDepuisBasLimite);
     }
 
     /**
