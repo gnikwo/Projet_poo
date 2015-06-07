@@ -22,4 +22,15 @@ public abstract class ObjetImmobile extends ObjetBase {
 
     public void estManger() {
     }
+    
+    /**
+     * Déplace l'objet
+     *
+     * @param dt le temps écoulé en millisecondes depuis le précédent
+     * déplacement
+     */
+    @Override
+    public void move(long dt) {
+    }
+
 }
