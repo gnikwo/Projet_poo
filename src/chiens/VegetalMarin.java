@@ -17,6 +17,9 @@ public class VegetalMarin extends ObjetImmobile {
     * Attribut stockant l'âge maximum qu'un végétal marin peut atteindre de type Integer.
     */
     private int ageMax;
+    
+    private int vitalite;
+    private int vitaliteMax;
 
     /**
     * Constructeur de la classe VégetalMarin.
@@ -25,7 +28,11 @@ public class VegetalMarin extends ObjetImmobile {
     * @param y
     */
     public VegetalMarin(World g, int x, int y) {
+         
       super(g, "Sprites/vegetal_marin", x, y);
+      vitaliteMax = 120;
+      vitalite = 120;
+      
     }
 
     /**
@@ -34,12 +41,29 @@ public class VegetalMarin extends ObjetImmobile {
     */
     @Override
     public void evoluate(long dt) {
+        
+        
+        if(this.vitalite >= 30){
+ 
+            this.clonage();
+    
+        }  
+        
+        
+       /* if(this.vitalite <= 0){
+  
+            this.estMort();
+  
+        }*/
+        
+        
     }
 
     /**
     * Procédure permettant de faire mourir le végétal marin.
     */
     public void estMort() {
+        
     }
 
     /**
@@ -64,6 +88,12 @@ public class VegetalMarin extends ObjetImmobile {
     * Permet à la plante de se reproduire, consomme 30% de son énergie vitale
     */
     public void clonage() {
+   
+        while(vitalite>= 30){
+        Lac.getInstance().add(new VegetalMarin(Lac.getInstance(), this.getLeft() + 20, this.getTop()));
+        vitalite -= vitaliteMax*0.3;
+        }
+        
     }
 
     /**
