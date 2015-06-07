@@ -25,7 +25,7 @@ public class Lac extends World {
     public void drawBackground(Graphics g) {
         
         try{
-        Image img = ImageIO.read(new File("Sprites/background.png"));
+        Image img = ImageIO.read(new File("src/Sprites/background.png"));
         g.drawImage(img, 0, 0, this.width(), this.height(), this);
         }catch(IOException e){
         }
