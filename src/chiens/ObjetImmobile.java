@@ -9,13 +9,13 @@ import iut.World;
  */
 public abstract class ObjetImmobile extends ObjetBase {
 
-	/**
-	 * Constructeur de la classe objetImmobile.
-	 */
-	public ObjetImmobile(World g, String nom, int x, int y) {
-            super(g, nom, x, y);
-	}
+    /**
+     * Constructeur de la classe objetImmobile.
+     */
+    public ObjetImmobile(World g, String nom, int x, int y) {
+        super(g, nom, x, y);
+    }
 
-	public void estManger() {
-	}
+    public void estManger() {
+    }
 }

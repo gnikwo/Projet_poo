@@ -11,22 +11,26 @@ import iut.World;
  */
 public class Ecrevisse extends Detritivore {
 
-	/**
-	 * Constructeur de la classe Ecrevisse.
-	 */
-	public Ecrevisse(World g, int x, int y) {
-            super(g,"Sprites/ecrevisse", x, y);
-	}
+    /**
+     * Constructeur de la classe Ecrevisse.
+     * @param g
+     * @param x
+     * @param y
+     */
+    public Ecrevisse(World g, int x, int y) {
+        super(g,"Sprites/ecrevisse", x, y);
+    }
 
-	/**
-	 * Permet d'accéder aux variables contenu dans l'énumération Type.
-	 */
-        @Override
-	public Type getType() {
-		return Type.Ecrevisse;
-	}
+    /**
+     * Permet d'accéder aux variables contenu dans l'énumération Type.
+     * @return 
+     */
+    @Override
+    public Type getType() {
+            return Type.Ecrevisse;
+    }
 
-        @Override
-        public void effect(Objet objet) {
-        }
+    @Override
+    public void effect(Objet objet) {
+    }
 }

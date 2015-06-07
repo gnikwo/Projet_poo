@@ -5,9 +5,8 @@ import iut.Objet;
 import java.util.ArrayList;
 
 /**
- * Classe permettant de g�rer les Herbivores tout ce qu'ils font ou peuvent faire.
- * 
- * H�rite de Animal.
+ * Classe permettant de gerer les Herbivores tout ce qu'ils font ou peuvent faire. 
+ * Herite de Animal.
  */
 public abstract class Herbivore extends Animal {
 
@@ -22,8 +21,8 @@ public abstract class Herbivore extends Animal {
     }
 
     /**
-     * D�place l'objet
-     * @param dt le temps �coul� en millisecondes depuis le pr�c�dent d�placement
+     * Deplace l'objet
+     * @param dt le temps ecoule en millisecondes depuis le precedent deplacement
      */
     public void move(long dt) {
         this.move(vitesseX, vitesseY);

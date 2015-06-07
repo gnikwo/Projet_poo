@@ -30,7 +30,7 @@ public abstract class Carnivore extends Animal {
 
     /**
      * Deplace l'objet
-     * @param dt le temps �coul� en millisecondes depuis le precedent deplacement
+     * @param dt le temps écoulé en millisecondes depuis le precedent deplacement
      */
     @Override
     public void move(long dt) {

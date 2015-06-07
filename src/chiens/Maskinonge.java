@@ -11,19 +11,19 @@ import iut.World;
  */
 public class Maskinonge extends Carnivore {
 
-	/**
-	 * Constructeur de la classe Maskinonge.
-	 */
-	public Maskinonge(World g, int x, int y) {
-            super(g,"Sprites/maskinonge", x, y);
-	}
+    /**
+     * Constructeur de la classe Maskinonge.
+     */
+    public Maskinonge(World g, int x, int y) {
+        super(g,"Sprites/maskinonge", x, y);
+    }
 
-	/**
-	 * Permet d'accéder aux variables contenu dans l'énumération Type.
-	 */
-	public Type getType() {
-		return Type.Maskinonge;
-	}
+    /**
+     * Permet d'accéder aux variables contenu dans l'énumération Type.
+     */
+    public Type getType() {
+            return Type.Maskinonge;
+    }
 
     @Override
     public void effect(Objet objet) {

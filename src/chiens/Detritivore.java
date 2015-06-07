@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * Classe permettant de g�rer les detritivores tout ce qu'ils font ou peuvent faire.
  * 
- * H�rite de Animal.
+ * Hérite de Animal.
  */
 public abstract class Detritivore extends Animal {
 
@@ -25,13 +25,16 @@ public abstract class Detritivore extends Animal {
      * Déplace l'objet
      * @param dt le temps écoulé en millisecondes depuis le précédent déplacement
      */
+    @Override
     public void move(long dt) {
         this.move(vitesseX, vitesseY);
     }
 
     /**
      * Action : effet d'une collision entre l'objet et le paramétre
+     * @param o
      */
+    @Override
     public void effect(Objet o) {
     }
 
