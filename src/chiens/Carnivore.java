@@ -11,27 +11,31 @@ import java.util.ArrayList;
  */
 public abstract class Carnivore extends Animal {
 
-	/**
-	 * Constructeur de la classe Carnivore
-	 */
-	public Carnivore(World g, String nom, int x, int y) {
-            
-            super(g, nom, x, y);
-            
-            _listeAlimentation.add(TypeAlimentation.Caneton);
-            _listeAlimentation.add(TypeAlimentation.OtocinclusAffinis);
-            _listeAlimentation.add(TypeAlimentation.Planorbe);
-            _listeAlimentation.add(TypeAlimentation.Ecrevisse);
-	}
+    /**
+     * Constructeur de la classe Carnivore
+     * @param g
+     * @param nom
+     * @param x
+     * @param y
+     */
+    public Carnivore(World g, String nom, int x, int y) {
 
-	/**
-	 * Deplace l'objet
-	 * @param dt le temps �coul� en millisecondes depuis le precedent deplacement
-	 */
-        @Override
-	public void move(long dt) {
-            this.move(vitesseX, vitesseY);
-	}
+        super(g, nom, x, y);
+
+        _listeAlimentation.add(TypeAlimentation.Caneton);
+        _listeAlimentation.add(TypeAlimentation.OtocinclusAffinis);
+        _listeAlimentation.add(TypeAlimentation.Planorbe);
+        _listeAlimentation.add(TypeAlimentation.Ecrevisse);
+    }
+
+    /**
+     * Deplace l'objet
+     * @param dt le temps �coul� en millisecondes depuis le precedent deplacement
+     */
+    @Override
+    public void move(long dt) {
+        this.move(vitesseX, vitesseY);
+    }
 
 
 }
