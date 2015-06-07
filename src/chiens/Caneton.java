@@ -16,7 +16,6 @@ public class Caneton extends Herbivore {
     */
    public Caneton( World g , int x, int y) {
        super (g, "Sprites/caneton", x, y);
-       //blalallala
    }
 
     /**
