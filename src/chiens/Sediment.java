@@ -60,6 +60,7 @@ public final class Sediment extends ObjetImmobile {
 
     /**
      * retourne l'attribut instance de type Sédiment.
+     * @return 
      */
     public final static Sediment getInstance() {
         return Sediment.instance;
@@ -77,6 +78,7 @@ public final class Sediment extends ObjetImmobile {
 
     /**
      * Permet d'accéder aux variables contenu dans l'énumération Type.
+     * @return 
      */
     @Override
     public Type getType() {
@@ -86,8 +88,6 @@ public final class Sediment extends ObjetImmobile {
 
     public void effect(Objet objet) {
     }
-
-
-        
+     
         
 }

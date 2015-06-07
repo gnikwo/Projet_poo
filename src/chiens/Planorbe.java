@@ -11,19 +11,24 @@ import iut.World;
  */
 public class Planorbe extends Detritivore {
 
-	/**
-	 * Constructeur de la classe Planorbe.
-	 */
-	public Planorbe(World g, int x, int y) {
-            super(g,"Sprites/planorbe", x, y);
-	}
+    /**
+     * Constructeur de la classe Planorbe.
+     * @param g
+     * @param x
+     * @param y
+     */
+    public Planorbe(World g, int x, int y) {
+        super(g,"Sprites/planorbe", x, y);
+    }
 
-	/**
-	 * Permet d'accéder aux variables contenu dans l'énumération Type.
-	 */
-	public Type getType() {
-		return Type.Planorbe;
-	}
+    /**
+     * Permet d'accéder aux variables contenu dans l'énumération Type.
+     * @return 
+     */
+    @Override
+    public Type getType() {
+            return Type.Planorbe;
+    }
 
     @Override
     public void effect(Objet objet) {

@@ -11,6 +11,10 @@ public abstract class ObjetImmobile extends ObjetBase {
 
     /**
      * Constructeur de la classe objetImmobile.
+     * @param g
+     * @param nom
+     * @param x
+     * @param y
      */
     public ObjetImmobile(World g, String nom, int x, int y) {
         super(g, nom, x, y);

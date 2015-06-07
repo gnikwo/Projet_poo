@@ -9,17 +9,19 @@ import iut.World;
  */
 public class OtocinclusAffinis extends Omnivore {
 
-	/**
-	 * Constructeur de la classe OtocinclusAffinis.
-	 */
-	public OtocinclusAffinis(World g, int x, int y) {
-            super(g,"Sprites/otocinclus_affinis", x, y);
-	}
+    /**
+     * Constructeur de la classe OtocinclusAffinis.
+     */
+    public OtocinclusAffinis(World g, int x, int y) {
+        super(g,"Sprites/otocinclus_affinis", x, y);
+    }
 
-	/**
-	 * Permet d'accéder aux variables contenu dans l'énumération Type.
-	 */
-	public Type getType() {
-		return Type.OtocinclusAffinis;
-	}
+    /**
+     * Permet d'accéder aux variables contenu dans l'énumération Type.
+     * @return 
+     */
+    @Override
+    public Type getType() {
+            return Type.OtocinclusAffinis;
+    }
 }
