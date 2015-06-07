@@ -86,11 +86,9 @@ public abstract class Animal extends ObjetDeplacable {
     @Override
     public void evoluate(long dt) {
         
-        System.out.println("test1");
         if(this.gestation)
             this.tpsGestation += 10;
         
-        System.out.println("test2");
         if(this.tpsGestation >= this.tpsGestationMax){
             
             this.mettreBas();
@@ -100,7 +98,6 @@ public abstract class Animal extends ObjetDeplacable {
             
         }
         
-        System.out.println("test3");
         this.hunger--;
         
         if(this.hunger <= 0){
@@ -109,16 +106,12 @@ public abstract class Animal extends ObjetDeplacable {
             
         }
         
-        System.out.println("test4");
         if(this.vitalite <= 0){
             
-        System.out.println("test5");
             this.estMort();
-        System.out.println("test6");
             
         }
         
-        System.out.println("test7");
     }
 
     /**

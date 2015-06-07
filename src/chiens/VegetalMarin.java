@@ -55,7 +55,7 @@ public class VegetalMarin extends ObjetImmobile {
             }  
         }
         
-        if(this.age==ageMax){
+        if(this.age>=ageMax){
             this.estMort();
         }
         

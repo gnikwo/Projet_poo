@@ -38,7 +38,6 @@ public class GrandBrochet extends Carnivore {
     @Override
     public void effect(Objet objet) {
         
-        System.out.println("effet0");
         if((this._listeReproduction.contains(((ObjetBase)objet).getType())) && (this.sexe.equals(Sexe.Femelle)) && (((Animal)objet).sexe.equals(Sexe.Male))){
             
             if(this.phaseReprod()){
@@ -49,20 +48,16 @@ public class GrandBrochet extends Carnivore {
             }
 
         }
-        System.out.println("effet1");
+        
         if(this._listeAlimentation.contains(((ObjetBase)objet).getType())){
             
-        System.out.println("effet2");
             if(this.isHungry()){
-        System.out.println("effet3");
                 
                 this.seNourrit((ObjetBase)objet);
                 
             }
             
-        System.out.println("effet4");
         }
-        System.out.println("effet5");
             
         
     }

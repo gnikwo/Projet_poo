@@ -69,7 +69,10 @@ public final class Sediment extends ObjetImmobile {
      * @return 
      */
     public final static Sediment getInstance() {
-        return Sediment.instance;
+        
+        if(instance == null)
+            instance = new Sediment(Lac.getInstance());
+        return instance;
     }
 
     /**
