@@ -1,12 +1,8 @@
 package chiens;
 
-import iut.Sprite;
-import iut.SpriteStore;
 import iut.World;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageProducer;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -32,13 +28,13 @@ public class Lac extends World {
         Image img = ImageIO.read(new File("Sprites/background.png"));
         g.drawImage(img, 0, 0, this.width(), this.height(), this);
         }catch(IOException e){
-            e.printStackTrace();
         }
     }
 
     /**
      * créé les objets de départ du monde
      */
+    @Override
     public void createObjects() {
 
         this.add(new Planorbe(this, 10, 20));
