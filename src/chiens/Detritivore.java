@@ -14,8 +14,8 @@ public abstract class Detritivore extends Animal {
     public Detritivore(World g, String nom, int x, int y) {
         
         super(g, nom, x, y);
-        _listeAlimentation.add(TypeAlimentation.Cadavre);
-        _listeAlimentation.add(TypeAlimentation.Sediment);
+        _listeAlimentation.add(Type.Cadavre);
+        _listeAlimentation.add(Type.Sediment);
         
     }
 

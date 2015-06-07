@@ -21,6 +21,8 @@ public class GrandBrochet extends Carnivore {
      */
     public GrandBrochet(World g, int x, int y) {
         super(g, "Sprites/grand_brochet", x, y);
+        this.sexe = ((int)(Math.random()*2)) > 0.5 ? Sexe.Male : Sexe.Femelle; //condition ternaire : (condition ? retourne ceci si vrai : cela si faux)
+        System.out.println("Nouveau GrandBrochet " + this.sexe);
     }
 
     /**
@@ -36,8 +38,8 @@ public class GrandBrochet extends Carnivore {
     @Override
     public void effect(Objet objet) {
         
-        
-        if((this._listeReproduction.contains(((ObjetBase)objet).getType())) && (this.sexe.equals(Sexe.Femelle)) ){
+        System.out.println("effet0");
+        if((this._listeReproduction.contains(((ObjetBase)objet).getType())) && (this.sexe.equals(Sexe.Femelle)) && (((Animal)objet).sexe.equals(Sexe.Male))){
             
             if(this.phaseReprod()){
             
@@ -47,6 +49,20 @@ public class GrandBrochet extends Carnivore {
             }
 
         }
+        System.out.println("effet1");
+        if(this._listeAlimentation.contains(((ObjetBase)objet).getType())){
+            
+        System.out.println("effet2");
+            if(this.isHungry()){
+        System.out.println("effet3");
+                
+                this.seNourrit((ObjetBase)objet);
+                
+            }
+            
+        System.out.println("effet4");
+        }
+        System.out.println("effet5");
             
         
     }
@@ -63,7 +79,7 @@ public class GrandBrochet extends Carnivore {
         }
         
         if(this.reproducteur.getType() == Type.GrandBrochet){
-            GrandBrochet g2 = new GrandBrochet(Lac.getInstance(),this.getLeft()+100,this.getLeft()+100);
+            GrandBrochet g2 = new GrandBrochet(Lac.getInstance(),this.getLeft()+((int)(Math.random()*10))-5,this.getLeft()+((int)(Math.random()*10))-5);
             Lac.getInstance().add(g2);
         }
         

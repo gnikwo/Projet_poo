@@ -11,27 +11,19 @@ public abstract class ObjetDeplacable extends ObjetBase {
     /**
      * Attribut privé qui correspond à la vitesse sur l'axe X d'un objet déplaçable.
      */
-    protected double vitesseX;
+    protected double vitesseX = 0;
     /**
      * Attribut privé qui correspond à la vitesse sur l'axe Y d'un objet déplaçable.
      */
-    protected double vitesseY;
-    /**
-     * Attribut privé qui correspond à l'orientation sur l'axe X d'un objet déplaçable.
-     */
-    protected double orientationX;
-    /**
-     * Attribut privé qui correspond à l'orientation sur l'axe Y d'un objet déplaçable.
-     */
-    protected double orientationY;
+    protected double vitesseY = 0;
     /**
      * Attribut privé qui correspond à la vitalité d'un objet déplaçable.
      */
-    protected int vitalite;
+    protected int vitalite = 100;
     /**
      * Attribut privé qui correspond à la vitalité maximum qu'un objet déplaçable peut atteindre.
      */
-    protected int vitaliteMax;
+    protected int vitaliteMax = 100;
 
     /**
      * Initialise un objet déplaçable.
@@ -74,47 +66,6 @@ public abstract class ObjetDeplacable extends ObjetBase {
      */
     public void setVitesseY(double vitesseY) {
             this.vitesseY = vitesseY;
-    }
-
-    /**
-     * Permet d'accéder à la variable d'instance orientationX.
-     * @return 
-     */
-    public double getOrientationX() {
-            return this.orientationX;
-    }
-
-    /**
-     * Permet de modifier la valeur de la variable d'instance orientationX.
-     * @param orientationX
-     */
-    public void setOrientationX(double orientationX) {
-            this.orientationX = orientationX;
-    }
-
-    /**
-     * Permet d'accéder à la variable d'instance orientationY.
-     * @return 
-     */
-    public double getOrientationY() {
-            return this.orientationY;
-    }
-
-    /**
-     * Permet de modifier la valeur de la variable d'instance orientationX.
-     * @param orientationY
-     */
-    public void setOrientationY(double orientationY) {
-            this.orientationY = orientationY;
-    }
-
-    @Override
-    public void estMange() {
-            throw new UnsupportedOperationException();
-    }
-
-    public void estMort() {
-            throw new UnsupportedOperationException();
     }
 
     /**

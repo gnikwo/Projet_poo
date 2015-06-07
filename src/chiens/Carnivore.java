@@ -22,10 +22,10 @@ public abstract class Carnivore extends Animal {
 
         super(g, nom, x, y);
 
-        _listeAlimentation.add(TypeAlimentation.Caneton);
-        _listeAlimentation.add(TypeAlimentation.OtocinclusAffinis);
-        _listeAlimentation.add(TypeAlimentation.Planorbe);
-        _listeAlimentation.add(TypeAlimentation.Ecrevisse);
+        _listeAlimentation.add(Type.Caneton);
+        _listeAlimentation.add(Type.OtocinclusAffinis);
+        _listeAlimentation.add(Type.Planorbe);
+        _listeAlimentation.add(Type.Ecrevisse);
         
         _listeReproduction.add(Type.GrandBrochet);
         _listeReproduction.add(Type.Maskinonge);

@@ -21,8 +21,8 @@ public abstract class Omnivore extends Animal {
     public Omnivore(World g, String nom, int x, int y) {
 
         super(g, nom, x, y);
-        _listeAlimentation.add(TypeAlimentation.VegetalMarin);
-        _listeAlimentation.add(TypeAlimentation.Planorbe);
+        _listeAlimentation.add(Type.VegetalMarin);
+        _listeAlimentation.add(Type.Planorbe);
 
     }
 

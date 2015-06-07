@@ -16,7 +16,7 @@ public abstract class Herbivore extends Animal {
     public Herbivore(World g, String nom, int x, int y) {
         
         super(g, nom, x, y);
-        _listeAlimentation.add(TypeAlimentation.VegetalMarin);
+        _listeAlimentation.add(Type.VegetalMarin);
         
     }
 

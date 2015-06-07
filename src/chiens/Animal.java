@@ -51,7 +51,7 @@ public abstract class Animal extends ObjetDeplacable {
      * Stocke le degré de faim entre 0 et 100
      */
     protected int hunger = 100;
-    public Sexe sexe = null;
+    protected Sexe sexe = null;
     protected Vector<Type> _listeReproduction = new Vector<Type>();
 
     /**
@@ -86,9 +86,11 @@ public abstract class Animal extends ObjetDeplacable {
     @Override
     public void evoluate(long dt) {
         
+        System.out.println("test1");
         if(this.gestation)
             this.tpsGestation += 10;
         
+        System.out.println("test2");
         if(this.tpsGestation >= this.tpsGestationMax){
             
             this.mettreBas();
@@ -98,6 +100,25 @@ public abstract class Animal extends ObjetDeplacable {
             
         }
         
+        System.out.println("test3");
+        this.hunger--;
+        
+        if(this.hunger <= 0){
+            
+            this.vitalite--;
+            
+        }
+        
+        System.out.println("test4");
+        if(this.vitalite <= 0){
+            
+        System.out.println("test5");
+            this.estMort();
+        System.out.println("test6");
+            
+        }
+        
+        System.out.println("test7");
     }
 
     /**
