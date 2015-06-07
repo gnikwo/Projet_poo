@@ -10,19 +10,24 @@ import iut.World;
  */
 public class BrochetTigre extends Carnivore {
 
-	/**
-	 * Constructeur de la classe BrochetTigre.
-	 */
-	public BrochetTigre(World g, int x, int y) {
-            super(g,"sprites/brochet_tigre", x, y);
-	}
+    /**
+     * Constructeur de la classe BrochetTigre.
+     * @param g
+     * @param x
+     * @param y
+     */
+    public BrochetTigre(World g, int x, int y) {
+        super(g,"sprites/brochet_tigre", x, y);
+    }
 
-	/**
-	 * Permet d'accéder aux variables contenu dans l'énumération Type.
-	 */
-	public Type getType() {
-		return Type.BrochetTigre;
-	}
+    /**
+     * Permet d'accéder aux variables contenu dans l'énumération Type.
+     * @return 
+     */
+    @Override
+    public Type getType() {
+            return Type.BrochetTigre;
+    }
 
     @Override
     public void effect(Objet objet) {
