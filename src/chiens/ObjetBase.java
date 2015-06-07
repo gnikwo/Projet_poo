@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public abstract class ObjetBase extends ObjetTouchable {
 	
     protected Lac l;
-    protected ArrayList<TypeAlimentation> _listeAlimentation = new ArrayList<TypeAlimentation>();
+    protected ArrayList<Type> _listeAlimentation = new ArrayList<Type>();
 
     public ObjetBase(World g, String nom, int x, int y) {
         super(g, nom, x, y);
@@ -21,8 +21,8 @@ public abstract class ObjetBase extends ObjetTouchable {
     /**
      * Fonction qui verifie si l'objet de base est ou non un omnivore, en renvoyant true ou false.
      */
-    public ArrayList<TypeAlimentation> getAlimentation(){
-        return null;
+    public ArrayList<Type> getAlimentation(){
+        return _listeAlimentation;
     }
 
     public Type getType() {
@@ -39,7 +39,20 @@ public abstract class ObjetBase extends ObjetTouchable {
         }
 
     }
-
+    
+    public void estMort(){
+        System.out.println("est Mort");
+        Lac.getInstance().add(new Cadavre(Lac.getInstance(), this.getLeft(), this.getTop()));
+        
+        try {
+            Lac.getInstance().remove(this);
+            this.finalize();
+        } catch (Throwable ex) {
+            Logger.getLogger(ObjetBase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
     /**
      * Renvoie la distance entre deux entit�s
      */
