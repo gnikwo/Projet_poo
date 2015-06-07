@@ -26,6 +26,7 @@ public class Cadavre extends ObjetDeplacable {
     public boolean isAlive() {
 
         return true;
+        
     }
 
     /**
@@ -34,6 +35,9 @@ public class Cadavre extends ObjetDeplacable {
      */
     @Override
     public void evoluate(long dt) {
+        
+        
+        
     }
 
     /**
@@ -51,7 +55,7 @@ public class Cadavre extends ObjetDeplacable {
      */
     @Override
     public Type getType() {
-            return Type.Cadavre;
+        return Type.Cadavre;
     }
 
     @Override
