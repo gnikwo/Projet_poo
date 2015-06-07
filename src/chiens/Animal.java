@@ -212,6 +212,6 @@ public abstract class Animal extends ObjetDeplacable {
      * @return
      */
     protected boolean isHungry() {
-        return this.isHungry();
+        return this.hunger < 90;
     }
 }

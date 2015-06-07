@@ -32,7 +32,7 @@ public abstract class ObjetBase extends ObjetTouchable {
     public void estMange(){
 
         try {
-            this.l.remove(this);
+            Lac.getInstance().remove(this);
             this.finalize();
         } catch (Throwable ex) {
             Logger.getLogger(ObjetBase.class.getName()).log(Level.SEVERE, null, ex);
