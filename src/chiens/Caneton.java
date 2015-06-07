@@ -7,7 +7,7 @@ import iut.World;
  * Hérite de Herbivore.
  */
 public class Caneton extends Herbivore {
-
+//blablablubli
     /**
     * Constructeur de la classe Caneton.
     * @param g
