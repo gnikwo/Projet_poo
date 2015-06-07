@@ -11,11 +11,12 @@ public class Caneton extends Herbivore {
     /**
     * Constructeur de la classe Caneton.
     * @param g
-     * @param x
-     * @param y
+    * @param x
+    * @param y
     */
    public Caneton( World g , int x, int y) {
        super (g, "Sprites/caneton", x, y);
+       //blalallala
    }
 
     /**
