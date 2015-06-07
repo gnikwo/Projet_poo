@@ -41,8 +41,6 @@ public class Lac extends World {
         this.add(new Planorbe(this, 15, 25));
         this.add(new BrochetTigre(this,30,35));
         this.add(new BrochetTigre(this,40,45));
-        this.add(new Cadavre(this,50,55));
-        this.add(new Cadavre(this,60,65));
         this.add(new Caneton(this,70,75));
         this.add(new Caneton(this,80,85));
         this.add(new Ecrevisse(this,90,95));
@@ -53,11 +51,10 @@ public class Lac extends World {
         this.add(new Maskinonge(this,140,145));
         this.add(new OtocinclusAffinis(this,150,155));
         this.add(new OtocinclusAffinis(this,160,165));
-        this.add(Sediment.getInstance());
-        this.add(Sediment.getInstance());
-        this.add(new VegetalMarin(this, 170,175));
-        this.add(new VegetalMarin(this,180,185));
-
+        this.add(new VegetalMarin(this, 900,900));
+        this.add(new VegetalMarin(this,900,900));
+        //this.add(Sediment.getInstance());
+       // this.add(Sediment.getInstance());
 
     }
 }
