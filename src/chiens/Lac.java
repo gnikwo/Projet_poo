@@ -66,8 +66,8 @@ public final class Lac extends World {
         //this.add(new Maskinonge(this,140,145));
         //this.add(new OtocinclusAffinis(this,150,155));
         //this.add(new OtocinclusAffinis(this,160,165));
-        //this.add(new VegetalMarin(this, 600,450));
-        //this.add(new VegetalMarin(this,150,450));
+        this.add(new VegetalMarin(this, 600,450));
+        this.add(new VegetalMarin(this,150,450));
         //this.add(Sediment.getInstance());
        // this.add(Sediment.getInstance());
 
