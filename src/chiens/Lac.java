@@ -56,20 +56,20 @@ public final class Lac extends World {
         this.add(new BrochetTigre(800,250));
         
         
-        this.add(new Caneton(200,50));
-        this.add(new Caneton(500,50));
-        this.add(new Caneton(800,50));
-        this.add(new Caneton(850,50));
-        this.add(new Caneton(1500,50));
+        this.add(new Caneton(200,95));
+        this.add(new Caneton(500,95));
+        this.add(new Caneton(800,95));
+        this.add(new Caneton(850,95));
+        this.add(new Caneton(1500,95));
         
         this.add(new Ecrevisse(90,800));
         this.add(new Ecrevisse(900,800));
         
         this.add(new GrandBrochet(110,200));
-        this.add(new GrandBrochet(500,125));
+        this.add(new GrandBrochet(500,600));
 
         
-        this.add(new Maskinonge(130,135));
+        this.add(new Maskinonge(600,350));
         this.add(new Maskinonge(1450,500));
         
         
