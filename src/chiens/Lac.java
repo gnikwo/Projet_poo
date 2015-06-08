@@ -1,11 +1,13 @@
 package chiens;
 
 import iut.World;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import java.awt.Toolkit;
 
 /**
  * Classe représentant le lac ou l'aquarium dans lequel les animaux vont évoluer
@@ -35,8 +37,13 @@ public final class Lac extends World {
 
     public static Lac getInstance(){
         
-       if(Lac.instance == null)
-           instance = new Lac(1820, 980, "Lac");
+        Dimension tailleEcran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        int hauteur = (int)tailleEcran.getHeight();
+        int largeur = (int)tailleEcran.getWidth(); 
+       
+        if(Lac.instance == null)
+        
+        instance = new Lac(largeur, hauteur, "Lac");
         
        return instance;
       
@@ -47,24 +54,26 @@ public final class Lac extends World {
      */
     @Override
     public void createObjects() {
+        
+        this.add(Sediment.getInstance());
 
-        this.add(new Planorbe( 10, 900));
-        this.add(new Planorbe( 550, 900));
-        this.add(new Planorbe( 1300, 900));
+        this.add(new Planorbe((int)( this.getWidth()*0.1),(int)(this.getHeight()*0.9)));
+        this.add(new Planorbe((int)( this.getWidth()*0.9),(int)(this.getHeight()*0.9)));
+        this.add(new Planorbe((int)( this.getWidth()*0.6),(int)(this.getHeight()*0.9)));
         
-        this.add(new BrochetTigre(600,500));
-        this.add(new BrochetTigre(800,250));
+        this.add(new BrochetTigre((int)( this.getWidth()*0.5),(int)(this.getHeight()*0.5)));
+        this.add(new BrochetTigre((int)( this.getWidth()*0.7),(int)(this.getHeight()*0.2)));
         
         
-        this.add(new Caneton(200,50));
-        this.add(new Caneton(500,50));
-        this.add(new Caneton(800,50));
-        this.add(new Caneton(850,50));
-        this.add(new Caneton(1500,50));
+        this.add(new Caneton((int)( this.getWidth()*0.4),(int)(this.getHeight()*0.025)));
+        this.add(new Caneton((int)( this.getWidth()*0.6),(int)(this.getHeight()*0.025)));
+        this.add(new Caneton((int)( this.getWidth()*0.8),(int)(this.getHeight()*0.025)));
+        this.add(new Caneton((int)( this.getWidth()*0.2),(int)(this.getHeight()*0.025)));
+        this.add(new Caneton((int)( this.getWidth()*0.1),(int)(this.getHeight()*0.025)));
         
-        this.add(new Ecrevisse(90,800));
-        this.add(new Ecrevisse(900,800));
-        
+        this.add(new Ecrevisse((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.8)));
+        this.add(new Ecrevisse((int)( this.getWidth()*0.7),(int)(this.getHeight()*0.8)));
+        // A terminer 
         this.add(new GrandBrochet(110,200));
         this.add(new GrandBrochet(500,125));
 
@@ -79,13 +88,13 @@ public final class Lac extends World {
         this.add(new OtocinclusAffinis(1200,550));
         
         
-        this.add(new VegetalMarin(600,725));
-        this.add(new VegetalMarin(150,725));
-        this.add(new VegetalMarin(200,725));
-        this.add(new VegetalMarin(800,725));
-        this.add(new VegetalMarin(1500,725));
+        this.add(new VegetalMarin((int)( this.getWidth()*0.2),(int)(this.getHeight()*0.77)));
+        this.add(new VegetalMarin((int)( this.getWidth()*0.5),(int)(this.getHeight()*0.75)));
+        this.add(new VegetalMarin((int)( this.getWidth()*0.6),(int)(this.getHeight()*0.75)));
+        this.add(new VegetalMarin((int)( this.getWidth()*0.8),(int)(this.getHeight()*0.75)));
+        this.add(new VegetalMarin((int)( this.getWidth()*0.10),(int)(this.getHeight()*0.75)));
         
-        this.add(Sediment.getInstance());
+        
     
 
     }
