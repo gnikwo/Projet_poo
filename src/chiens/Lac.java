@@ -48,26 +48,43 @@ public final class Lac extends World {
     @Override
     public void createObjects() {
 
-        /*this.add(new Planorbe( 10, 20));
-        this.add(new Planorbe( 15, 25));
-        this.add(new BrochetTigre(30,35));
-        this.add(new BrochetTigre(40,45));
-        this.add(new Caneton(70,75));
-        this.add(new Caneton(80,85));
-        this.add(new Ecrevisse(90,95));
-        this.add(new Ecrevisse(100,105));*/
+        this.add(new Planorbe( 10, 900));
+        this.add(new Planorbe( 550, 900));
+        this.add(new Planorbe( 1300, 900));
         
-        GrandBrochet g2 = new GrandBrochet(110,115);
-        this.add(g2);
-        GrandBrochet g = new GrandBrochet(500,125);
-        g.setVitesseX(-3);
-        this.add(g);
-        //this.add(new Maskinonge(130,135));
-        //this.add(new Maskinonge(140,145));
-        //this.add(new OtocinclusAffinis(150,155));
-        //this.add(new OtocinclusAffinis(160,165));
-        this.add(new VegetalMarin(600,450));
-        this.add(new VegetalMarin(150,450));
+        this.add(new BrochetTigre(600,500));
+        this.add(new BrochetTigre(800,250));
+        
+        
+        this.add(new Caneton(200,50));
+        this.add(new Caneton(500,50));
+        this.add(new Caneton(800,50));
+        this.add(new Caneton(850,50));
+        this.add(new Caneton(1500,50));
+        
+        this.add(new Ecrevisse(90,800));
+        this.add(new Ecrevisse(900,800));
+        
+        this.add(new GrandBrochet(110,200));
+        this.add(new GrandBrochet(500,125));
+
+        
+        this.add(new Maskinonge(130,135));
+        this.add(new Maskinonge(1450,500));
+        
+        
+        this.add(new OtocinclusAffinis(100,600));
+        this.add(new OtocinclusAffinis(1000,500));
+        this.add(new OtocinclusAffinis(200,650));
+        this.add(new OtocinclusAffinis(1200,550));
+        
+        
+        this.add(new VegetalMarin(600,725));
+        this.add(new VegetalMarin(150,725));
+        this.add(new VegetalMarin(200,725));
+        this.add(new VegetalMarin(800,725));
+        this.add(new VegetalMarin(1500,725));
+        
         this.add(Sediment.getInstance());
     
 
