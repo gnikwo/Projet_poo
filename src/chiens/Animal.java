@@ -18,7 +18,7 @@ public abstract class Animal extends ObjetDeplacable {
      */
     protected int ageMax = 100;
     /**
-     * Stocke l'âge actuel des animaux
+     * Stocke l'âge actuel des animaux.
      */
     protected int age = 0;
     /**
