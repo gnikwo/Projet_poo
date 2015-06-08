@@ -47,9 +47,11 @@ public final class Lac extends World {
      */
     @Override
     public void createObjects() {
-
+        
         
         this.add(Sediment.getInstance());
+    
+
         
         this.add(new Planorbe( 10, 900));
         this.add(new Planorbe( 550, 900));
@@ -88,7 +90,6 @@ public final class Lac extends World {
         this.add(new VegetalMarin(800,725));
         this.add(new VegetalMarin(1500,725));
         
-    
 
     }
 }

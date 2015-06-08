@@ -31,7 +31,7 @@ public class Cadavre extends ObjetDeplacable {
     @Override
     public boolean isAlive() {
 
-        return true;
+        return false;
         
     }
 
