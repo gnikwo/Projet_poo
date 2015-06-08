@@ -1,7 +1,6 @@
 package chiens;
 
 import iut.Objet;
-import iut.World;
 
 
 /**
@@ -13,12 +12,11 @@ public class Ecrevisse extends Detritivore {
 
     /**
      * Constructeur de la classe Ecrevisse.
-     * @param g
      * @param x
      * @param y
      */
-    public Ecrevisse(World g, int x, int y) {
-        super(g,"Sprites/ecrevisse", x, y);
+    public Ecrevisse(int x, int y) {
+        super("Sprites/ecrevisse", x, y);
     }
 
     /**
@@ -40,7 +38,7 @@ public class Ecrevisse extends Detritivore {
     @Override
     protected void mettreBas() {  
     
-        l.add(new Ecrevisse(this.l, this.getLeft(), this.getTop()));
+        l.add(new Ecrevisse(this.getLeft(), this.getTop()));
         this.vitalite -= this.vitaliteMax*0.1;
         
     }

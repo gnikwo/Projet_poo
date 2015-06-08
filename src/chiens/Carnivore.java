@@ -13,22 +13,21 @@ public abstract class Carnivore extends Animal {
 
     /**
      * Constructeur de la classe Carnivore
-     * @param g
      * @param nom
      * @param x
      * @param y
      */
-    public Carnivore(World g, String nom, int x, int y) {
+    public Carnivore( String nom, int x, int y) {
 
-        super(g, nom, x, y);
+        super(nom, x, y);
 
-        _listeAlimentation.add(Type.Caneton);
-        _listeAlimentation.add(Type.OtocinclusAffinis);
-        _listeAlimentation.add(Type.Planorbe);
-        _listeAlimentation.add(Type.Ecrevisse);
+        listeAlimentation.add(Type.Caneton);
+        listeAlimentation.add(Type.OtocinclusAffinis);
+        listeAlimentation.add(Type.Planorbe);
+        listeAlimentation.add(Type.Ecrevisse);
         
-        _listeReproduction.add(Type.GrandBrochet);
-        _listeReproduction.add(Type.Maskinonge);
+        listeReproduction.add(Type.GrandBrochet);
+        listeReproduction.add(Type.Maskinonge);
         
     }
 

@@ -1,7 +1,6 @@
 package chiens;
 
 import iut.Objet;
-import iut.World;
 
 /**
  * Classe permettant de créer des BrochetTigre et de gérer tout ce qu'ils font ou peuvent faire. (hybride des deux autres carnivore)
@@ -12,12 +11,11 @@ public class BrochetTigre extends Carnivore {
 
     /**
      * Constructeur de la classe BrochetTigre.
-     * @param g
      * @param x
      * @param y
      */
-    public BrochetTigre(World g, int x, int y) {
-        super(g,"sprites/brochet_tigre", x, y);
+    public BrochetTigre(int x, int y) {
+        super("sprites/brochet_tigre", x, y);
     }
 
     /**

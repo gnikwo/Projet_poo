@@ -1,7 +1,6 @@
 package chiens;
 
 import iut.Objet;
-import iut.World;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,28 +13,24 @@ public class VegetalMarin extends ObjetImmobile {
     /**
     * Attribut stockant l'âge d'un végétal marin de type Integer.
     */
-    private int age;
+    private int age=0;
     /**
     * Attribut stockant l'âge maximum qu'un végétal marin peut atteindre de type Integer.
     */
-    private int ageMax;
+    private int ageMax=100;
     
-    private int vitalite;
-    private int vitaliteMax;
+    private int vitalite=120;
+    private int vitaliteMax=120;
 
     /**
     * Constructeur de la classe VégetalMarin.
-    * @param g
     * @param x
     * @param y
     */
-    public VegetalMarin(World g, int x, int y) {
+    public VegetalMarin(int x, int y) {
          
-      super(g, "Sprites/vegetal_marin", x, y);
-      vitaliteMax = 120;
-      vitalite = 120;
-      ageMax = 100;
-      
+      super("Sprites/vegetal_marin", x, y);
+  
     }
 
     /**
@@ -45,10 +40,11 @@ public class VegetalMarin extends ObjetImmobile {
     @Override
     public void evoluate(long dt) {
         
-        age ++;
+        age++;
+        System.out.println(age);
         
-        if(age<=50){
-            if(this.vitalite >= 30){
+        if(age>=ageMax*0.5){
+            if(this.vitalite >= vitaliteMax*0.3){
  
                 this.clonage();
     
@@ -110,11 +106,10 @@ public class VegetalMarin extends ObjetImmobile {
     */
     public void clonage() {
    
-        if(age>= 50){
-        Lac.getInstance().add(new VegetalMarin(Lac.getInstance(), this.getLeft() + 20, this.getTop()));
-        vitalite -= vitaliteMax*0.3;
-        }
         
+        Lac.getInstance().add(new VegetalMarin(this.getLeft() + 20, this.getTop()));
+        vitalite -= vitaliteMax*0.3;
+ 
     }
 
     /**

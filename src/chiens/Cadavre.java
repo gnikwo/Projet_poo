@@ -1,7 +1,6 @@
 package chiens;
 
 import iut.Objet;
-import iut.World;
 
 /**
  * Classe permettant de gerer les Cadavre tout ce qu'ils font ou peuvent faire.
@@ -10,12 +9,11 @@ public class Cadavre extends ObjetDeplacable {
 
     /**
      * Constructeur de la classe cadavre.
-     * @param g
      * @param x
      * @param y
      */
-    public Cadavre(World g, int x, int y) {
-        super(g,"Sprites/cadavre", x, y);
+    public Cadavre( int x, int y) {
+        super("Sprites/cadavre", x, y);
     }
 
     /**

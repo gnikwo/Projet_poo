@@ -1,7 +1,5 @@
 package chiens;
 
-import iut.World;
-
 /**
  * Classe permettant de creer des Canetons et de gerer tout ce qu'ils font ou peuvent faire.
  * Hérite de Herbivore.
@@ -10,12 +8,11 @@ public class Caneton extends Herbivore {
 //blablablubli
     /**
     * Constructeur de la classe Caneton.
-    * @param g
     * @param x
     * @param y
     */
-   public Caneton( World g , int x, int y) {
-       super (g, "Sprites/caneton", x, y);
+   public Caneton( int x, int y) {
+       super ( "Sprites/caneton", x, y);
    }
 
     /**

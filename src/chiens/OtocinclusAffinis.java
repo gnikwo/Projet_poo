@@ -1,7 +1,5 @@
 package chiens;
 
-import iut.World;
-
 /**
  * Classe permettant de créer des OtocinclusAffinis et de gérer tout ce qu'ils font ou peuvent faire.
  * 
@@ -11,9 +9,11 @@ public class OtocinclusAffinis extends Omnivore {
 
     /**
      * Constructeur de la classe OtocinclusAffinis.
+     * @param x
+     * @param y
      */
-    public OtocinclusAffinis(World g, int x, int y) {
-        super(g,"Sprites/otocinclus_affinis", x, y);
+    public OtocinclusAffinis(int x, int y) {
+        super("Sprites/otocinclus_affinis", x, y);
     }
 
     /**

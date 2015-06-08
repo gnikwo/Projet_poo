@@ -1,7 +1,6 @@
 package chiens;
 
 import iut.Objet;
-import iut.World;
 
 /**
  * Classe permettant de gérer les sédiments tout ce qu'ils font ou peuvent
@@ -28,8 +27,8 @@ public final class Sediment extends ObjetImmobile {
     /**
      * Constructeur de la classe Sédiment.
      */
-    private Sediment(World g) {
-        super(g,"Sprites/sediment",0, 0);
+    private Sediment() {
+        super("Sprites/sediment",0, 0);
     }
 
     public void addMatiere(int q){
@@ -71,7 +70,7 @@ public final class Sediment extends ObjetImmobile {
     public final static Sediment getInstance() {
         
         if(instance == null)
-            instance = new Sediment(Lac.getInstance());
+            instance = new Sediment();
         return instance;
     }
 

@@ -2,7 +2,6 @@ package chiens;
 
 import iut.World;
 import iut.Objet;
-import java.util.ArrayList;
 
 /**
  * Classe permettant de g�rer les Omnivores tout ce qu'ils font ou peuvent faire.
@@ -18,11 +17,11 @@ public abstract class Omnivore extends Animal {
      * @param x
      * @param y
      */
-    public Omnivore(World g, String nom, int x, int y) {
+    public Omnivore(String nom, int x, int y) {
 
-        super(g, nom, x, y);
-        _listeAlimentation.add(Type.VegetalMarin);
-        _listeAlimentation.add(Type.Planorbe);
+        super(nom, x, y);
+        listeAlimentation.add(Type.VegetalMarin);
+        listeAlimentation.add(Type.Planorbe);
 
     }
 

@@ -1,8 +1,6 @@
 package chiens;
 
 import iut.Objet;
-import iut.World;
-import java.util.ArrayList;
 
 /**
  * Classe permettant de g�rer les detritivores tout ce qu'ils font ou peuvent faire.
@@ -11,11 +9,11 @@ import java.util.ArrayList;
  */
 public abstract class Detritivore extends Animal {
 
-    public Detritivore(World g, String nom, int x, int y) {
+    public Detritivore(String nom, int x, int y) {
         
-        super(g, nom, x, y);
-        _listeAlimentation.add(Type.Cadavre);
-        _listeAlimentation.add(Type.Sediment);
+        super(nom, x, y);
+        listeAlimentation.add(Type.Cadavre);
+        listeAlimentation.add(Type.Sediment);
         
     }
 

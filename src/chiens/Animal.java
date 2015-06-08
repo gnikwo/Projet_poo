@@ -1,7 +1,6 @@
 package chiens;
 
-import java.util.Vector;
-import iut.World;
+import java.util.ArrayList;
 
 /**
  * Classe permettant de gérer les Animaux, tout ce qu'ils font ou peuvent faire.
@@ -52,18 +51,17 @@ public abstract class Animal extends ObjetDeplacable {
      */
     protected int hunger = 100;
     protected Sexe sexe = null;
-    protected Vector<Type> _listeReproduction = new Vector<Type>();
+    protected ArrayList<Type> listeReproduction = new ArrayList<>();
 
     /**
      * Constructeur de la classe animal
      *
-     * @param g
      * @param nom
      * @param x
      * @param y
      */
-    public Animal(World g, String nom, int x, int y) {
-        super(g, nom, x, y);
+    public Animal( String nom, int x, int y) {
+        super( nom, x, y);
     }
 
     /**

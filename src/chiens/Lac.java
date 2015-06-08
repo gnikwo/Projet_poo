@@ -48,28 +48,28 @@ public final class Lac extends World {
     @Override
     public void createObjects() {
 
-        /*this.add(new Planorbe(this, 10, 20));
-        this.add(new Planorbe(this, 15, 25));
-        this.add(new BrochetTigre(this,30,35));
-        this.add(new BrochetTigre(this,40,45));
-        this.add(new Caneton(this,70,75));
-        this.add(new Caneton(this,80,85));
-        this.add(new Ecrevisse(this,90,95));
-        this.add(new Ecrevisse(this,100,105));*/
+        /*this.add(new Planorbe( 10, 20));
+        this.add(new Planorbe( 15, 25));
+        this.add(new BrochetTigre(30,35));
+        this.add(new BrochetTigre(40,45));
+        this.add(new Caneton(70,75));
+        this.add(new Caneton(80,85));
+        this.add(new Ecrevisse(90,95));
+        this.add(new Ecrevisse(100,105));*/
         
-        GrandBrochet g2 = new GrandBrochet(this,110,115);
+        /*GrandBrochet g2 = new GrandBrochet(110,115);
         this.add(g2);
-        GrandBrochet g = new GrandBrochet(this,500,125);
+        GrandBrochet g = new GrandBrochet(500,125);
         g.setVitesseX(-3);
-        this.add(g);
-        //this.add(new Maskinonge(this,130,135));
-        //this.add(new Maskinonge(this,140,145));
-        //this.add(new OtocinclusAffinis(this,150,155));
-        //this.add(new OtocinclusAffinis(this,160,165));
-        this.add(new VegetalMarin(this, 600,450));
-        this.add(new VegetalMarin(this,150,450));
+        this.add(g);*/
+        //this.add(new Maskinonge(130,135));
+        //this.add(new Maskinonge(140,145));
+        //this.add(new OtocinclusAffinis(150,155));
+        //this.add(new OtocinclusAffinis(160,165));
+        this.add(new VegetalMarin(600,450));
+        this.add(new VegetalMarin(150,450));
         //this.add(Sediment.getInstance());
-       // this.add(Sediment.getInstance());
+    
 
     }
 }

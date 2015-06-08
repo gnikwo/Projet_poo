@@ -1,7 +1,5 @@
 package chiens;
 
-import iut.World;
-
 /**
  * Classe permettant de gérer les objetDeplacable tout ce qu'ils font ou peuvent faire.
  * 
@@ -26,14 +24,13 @@ public abstract class ObjetDeplacable extends ObjetBase {
     protected int vitaliteMax = 100;
 
     /**
-     * Initialise un objet déplaçable.
-     * @param g
+     * Initialise un objet déplaçable.     
      * @param nom
      * @param x
      * @param y
      */
-    public ObjetDeplacable(World g, String nom, int x, int y) {
-         super(g,nom, x, y);
+    public ObjetDeplacable(String nom, int x, int y) {
+         super(nom, x, y);
     }
 
     /**

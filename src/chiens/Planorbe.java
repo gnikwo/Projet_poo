@@ -1,7 +1,6 @@
 package chiens;
 
 import iut.Objet;
-import iut.World;
 
 
 /**
@@ -13,12 +12,11 @@ public class Planorbe extends Detritivore {
 
     /**
      * Constructeur de la classe Planorbe.
-     * @param g
      * @param x
      * @param y
      */
-    public Planorbe(World g, int x, int y) {
-        super(g,"Sprites/planorbe", x, y);
+    public Planorbe(int x, int y) {
+        super("Sprites/planorbe", x, y);
     }
 
     /**
@@ -27,7 +25,7 @@ public class Planorbe extends Detritivore {
      */
     @Override
     public Type getType() {
-            return Type.Planorbe;
+        return Type.Planorbe;
     }
 
     @Override
