@@ -94,5 +94,7 @@ public final class Lac extends World {
         this.add(new VegetalMarin((int)( this.getWidth()*0.10),(int)(this.getHeight()*0.75)));
         
 
+        
+        
     }
 }
