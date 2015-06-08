@@ -1,6 +1,8 @@
 package chiens;
 
 import iut.Objet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Classe permettant de gerer les Cadavre tout ce qu'ils font ou peuvent faire.
@@ -59,5 +61,17 @@ public class Cadavre extends ObjetDeplacable {
     @Override
     public void effect(Objet objet) {
     }
+    @Override
+    public void estMort(){
+        System.out.println("Deviens sédiment");
+        Sediment.getInstance().addMatiere(100);
+        
+        try {
+            Lac.getInstance().remove(this);
+            this.finalize();
+        } catch (Throwable ex) {
+            Logger.getLogger(ObjetBase.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
+    }
 }
