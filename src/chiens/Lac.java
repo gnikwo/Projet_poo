@@ -54,7 +54,7 @@ public final class Lac extends World {
      */
     @Override
     public void createObjects() {
-        
+
         this.add(Sediment.getInstance());
 
         this.add(new Planorbe((int)( this.getWidth()*0.1),(int)(this.getHeight()*0.9)));
@@ -63,7 +63,6 @@ public final class Lac extends World {
         
         this.add(new BrochetTigre((int)( this.getWidth()*0.5),(int)(this.getHeight()*0.5)));
         this.add(new BrochetTigre((int)( this.getWidth()*0.7),(int)(this.getHeight()*0.2)));
-        
         
         this.add(new Caneton((int)( this.getWidth()*0.4),(int)(this.getHeight()*0.025)));
         this.add(new Caneton((int)( this.getWidth()*0.6),(int)(this.getHeight()*0.025)));
@@ -75,10 +74,10 @@ public final class Lac extends World {
         this.add(new Ecrevisse((int)( this.getWidth()*0.7),(int)(this.getHeight()*0.8)));
         // A terminer 
         this.add(new GrandBrochet(110,200));
-        this.add(new GrandBrochet(500,125));
+        this.add(new GrandBrochet(500,600));
 
         
-        this.add(new Maskinonge(130,135));
+        this.add(new Maskinonge(600,350));
         this.add(new Maskinonge(1450,500));
         
         
@@ -94,8 +93,6 @@ public final class Lac extends World {
         this.add(new VegetalMarin((int)( this.getWidth()*0.8),(int)(this.getHeight()*0.75)));
         this.add(new VegetalMarin((int)( this.getWidth()*0.10),(int)(this.getHeight()*0.75)));
         
-        
-    
 
     }
 }
