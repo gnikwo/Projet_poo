@@ -44,6 +44,9 @@ public final class Sediment extends ObjetImmobile {
 
     @Override
     public void estManger() {
+        
+        
+        
     }
 
     /**
@@ -94,9 +97,9 @@ public final class Sediment extends ObjetImmobile {
     public void draw(Graphics g){
         
         g.setColor(new Color(221 , 152 , 92));
-        for(int i = 0; i < Lac.getInstance().getWidth(); i+=20){
-            for(int j = 0; j < this.quantite; j+=5){
-                g.fillOval(i-20, Lac.getInstance().height()-j, 40, 40);
+        for(int i = 0; i < Lac.getInstance().getWidth()+20; i+=20){
+            for(int j = 0; j < this.quantite; j+=20){
+                g.fillOval(i-20, Lac.getInstance().getHeight()-j, 40, 40);
             }
         }
     }
