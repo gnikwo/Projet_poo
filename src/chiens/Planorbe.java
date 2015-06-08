@@ -16,9 +16,15 @@ public class Planorbe extends Detritivore {
      * @param y
      */
     public Planorbe(int x, int y) {
+        
         super("Sprites/planorbe", x, y);
         
         System.out.println("Nouveau Planorbe");
+        
+        this.vitalite = 1000;
+        this.vitaliteMax = 1000;
+        this.vitesseX = 0;
+        this.vitesseY = 0 ;
     }
 
     /**

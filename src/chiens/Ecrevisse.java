@@ -16,10 +16,16 @@ public class Ecrevisse extends Detritivore {
      * @param y
      */
     public Ecrevisse(int x, int y) {
+        
         super("Sprites/ecrevisse", x, y);
         
         this.sexe = ((int)(Math.random()*2)) > 0.5 ? Sexe.Male : Sexe.Femelle; //condition ternaire : (condition ? retourne ceci si vrai : cela si faux)
         System.out.println("Nouvelle Ecrevisse" + this.sexe);
+        
+        this.vitalite = 800;
+        this.vitaliteMax = 800;
+        this.vitesseX = 0;
+        this.vitesseY = 0 ;
     }
 
     /**

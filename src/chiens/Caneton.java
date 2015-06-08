@@ -12,7 +12,13 @@ public class Caneton extends Herbivore {
     * @param y
     */
    public Caneton( int x, int y) {
-       super ( "Sprites/caneton", x, y);
+       
+       super ("Sprites/caneton", x, y);
+       
+       this.vitalite = 100;
+       this.vitaliteMax = 100;
+       this.vitesseX = 0;
+       this.vitesseY = 0 ;
    }
 
     /**

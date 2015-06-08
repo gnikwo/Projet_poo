@@ -9,19 +9,19 @@ public abstract class ObjetDeplacable extends ObjetBase {
     /**
      * Attribut privé qui correspond à la vitesse sur l'axe X d'un objet déplaçable.
      */
-    protected double vitesseX = 0;
+    protected double vitesseX ;
     /**
      * Attribut privé qui correspond à la vitesse sur l'axe Y d'un objet déplaçable.
      */
-    protected double vitesseY = 0;
+    protected double vitesseY ;
     /**
      * Attribut privé qui correspond à la vitalité d'un objet déplaçable.
      */
-    protected int vitalite = 100;
+    protected int vitalite;
     /**
      * Attribut privé qui correspond à la vitalité maximum qu'un objet déplaçable peut atteindre.
      */
-    protected int vitaliteMax = 100;
+    protected int vitaliteMax;
 
     /**
      * Initialise un objet déplaçable.     

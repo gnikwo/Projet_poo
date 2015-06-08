@@ -15,7 +15,13 @@ public class Cadavre extends ObjetDeplacable {
      * @param y
      */
     public Cadavre( int x, int y) {
+        
         super("Sprites/cadavre", x, y);
+        
+        this.vitalite = 250;
+        this.vitaliteMax = 250;
+        this.vitesseX = 0;
+        this.vitesseY = 0 ;
     }
 
     /**
@@ -55,14 +61,19 @@ public class Cadavre extends ObjetDeplacable {
      */
     @Override
     public Type getType() {
+        
         return Type.Cadavre;
     }
 
     @Override
     public void effect(Objet objet) {
     }
+    
+    
     @Override
     public void estMort(){
+        
+        
         System.out.println("Deviens sédiment");
         Sediment.getInstance().addMatiere(100);
         
