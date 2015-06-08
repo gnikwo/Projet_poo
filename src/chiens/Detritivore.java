@@ -15,6 +15,10 @@ public abstract class Detritivore extends Animal {
         listeAlimentation.add(Type.Cadavre);
         listeAlimentation.add(Type.Sediment);
         
+             
+        listeReproduction.add(Type.Ecrevisse);
+
+        
     }
 
 
@@ -28,12 +32,6 @@ public abstract class Detritivore extends Animal {
         this.move(vitesseX, vitesseY);
     }
 
-    /**
-     * Action : effet d'une collision entre l'objet et le paramétre
-     * @param o
-     */
-    @Override
-    public void effect(Objet o) {
-    }
+  
 
 }

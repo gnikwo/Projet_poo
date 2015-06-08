@@ -18,7 +18,8 @@ public abstract class Herbivore extends Animal {
         
         super(nom, x, y);
         listeAlimentation.add(Type.VegetalMarin);
-        
+       
+        listeReproduction.add(Type.Planorbe);
     }
 
     /**

@@ -17,6 +17,8 @@ public class Maskinonge extends Carnivore {
      */
     public Maskinonge(int x, int y) {
         super("Sprites/maskinonge", x, y);
+        this.sexe = ((int)(Math.random()*2)) > 0.5 ? Sexe.Male : Sexe.Femelle; //condition ternaire : (condition ? retourne ceci si vrai : cela si faux)
+        System.out.println("Nouveau Maskinonge " + this.sexe);
     }
 
     /**
@@ -30,10 +32,45 @@ public class Maskinonge extends Carnivore {
 
     @Override
     public void effect(Objet objet) {
+
+        
+        if((this.listeReproduction.contains(((ObjetBase)objet).getType())) && (this.sexe.equals(Sexe.Femelle)) && (((Animal)objet).sexe.equals(Sexe.Male))){
+            
+            if(this.phaseReprod()){
+            
+                if(!this.gestation)
+                    this.seReproduit((ObjetBase) objet);
+            
+            }
+
+        }
+        
+        if(this.listeAlimentation.contains(((ObjetBase)objet).getType())){
+            
+            if(this.isHungry()){
+                
+                this.seNourrit((ObjetBase)objet);
+                
+            }
+            
+        }
     }
 
     @Override
     protected void mettreBas() {
+                
+        if(this.reproducteur.getType() == Type.Maskinonge){
+            Lac.getInstance().add(new BrochetTigre(this.getLeft(), this.getTop()));
+        }
+        
+        if(this.reproducteur.getType() == Type.Maskinonge){
+            Maskinonge m2 = new Maskinonge(this.getLeft()+((int)(Math.random()*10))-5,this.getLeft()+((int)(Math.random()*10))-5);
+            Lac.getInstance().add(m2);
+        }
+        
+        this.vitalite -= this.vitaliteMax * 0.1;
+
+    }
+
         
     }
-}

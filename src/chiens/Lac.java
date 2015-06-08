@@ -57,18 +57,18 @@ public final class Lac extends World {
         this.add(new Ecrevisse(90,95));
         this.add(new Ecrevisse(100,105));*/
         
-        /*GrandBrochet g2 = new GrandBrochet(110,115);
+        GrandBrochet g2 = new GrandBrochet(110,115);
         this.add(g2);
         GrandBrochet g = new GrandBrochet(500,125);
         g.setVitesseX(-3);
-        this.add(g);*/
+        this.add(g);
         //this.add(new Maskinonge(130,135));
         //this.add(new Maskinonge(140,145));
         //this.add(new OtocinclusAffinis(150,155));
         //this.add(new OtocinclusAffinis(160,165));
         this.add(new VegetalMarin(600,450));
         this.add(new VegetalMarin(150,450));
-        //this.add(Sediment.getInstance());
+        this.add(Sediment.getInstance());
     
 
     }

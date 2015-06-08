@@ -17,6 +17,9 @@ public class Ecrevisse extends Detritivore {
      */
     public Ecrevisse(int x, int y) {
         super("Sprites/ecrevisse", x, y);
+        
+        this.sexe = ((int)(Math.random()*2)) > 0.5 ? Sexe.Male : Sexe.Femelle; //condition ternaire : (condition ? retourne ceci si vrai : cela si faux)
+        System.out.println("Nouvelle Ecrevisse" + this.sexe);
     }
 
     /**
@@ -30,6 +33,29 @@ public class Ecrevisse extends Detritivore {
 
     @Override
     public void effect(Objet objet) {
+            
+        if((this.listeReproduction.contains(((ObjetBase)objet).getType())) && (this.sexe.equals(Sexe.Femelle)) && (((Animal)objet).sexe.equals(Sexe.Male))){
+            
+            if(this.phaseReprod()){
+            
+                if(!this.gestation)
+                    this.seReproduit((ObjetBase) objet);
+            
+            }
+
+        }
+        
+        if(this.listeAlimentation.contains(((ObjetBase)objet).getType())){
+            
+            if(this.isHungry()){
+                
+                this.seNourrit((ObjetBase)objet);
+                
+            }
+            
+        }    
+        
+        
     }
     
     /**

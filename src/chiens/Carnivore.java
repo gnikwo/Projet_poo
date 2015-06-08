@@ -1,9 +1,5 @@
 package chiens;
 
-import iut.Objet;
-import iut.World;
-import java.util.ArrayList;
-
 /**
  * Classe permettant de gerer les Carnivores tout ce qu'ils font ou peuvent faire.
  * 

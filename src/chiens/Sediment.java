@@ -1,6 +1,8 @@
 package chiens;
 
 import iut.Objet;
+import java.awt.Color;
+import java.awt.Graphics;
 
 /**
  * Classe permettant de gérer les sédiments tout ce qu'ils font ou peuvent
@@ -87,7 +89,15 @@ public final class Sediment extends ObjetImmobile {
     @Override
     public void effect(Objet objet) {
     }
-    
+
+    @Override
+    public void draw(Graphics g) throws Exception {
+        
+        g.setColor(new Color(221 , 152 , 92));
+        for(int i = 0; i < Lac.getInstance().getWidth(); i+=20)
+            g.fillOval(i-20, this.getMiddleY(), 40, 40);
+    }
+
     
      
         

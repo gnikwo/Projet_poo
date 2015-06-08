@@ -16,15 +16,16 @@ public class BrochetTigre extends Carnivore {
      */
     public BrochetTigre(int x, int y) {
         super("sprites/brochet_tigre", x, y);
+        this.sexe = ((int)(Math.random()*2)) > 0.5 ? Sexe.Male : Sexe.Femelle; //condition ternaire : (condition ? retourne ceci si vrai : cela si faux)
+        System.out.println("Nouveau BrochetTigre " + this.sexe);
     }
 
     /**
     * Créé un nouvel animal + fait consommer de l'énergie vitale à la mère
     */
+    @Override
     protected void mettreBas() {  
-    
-        
-        
+  
     }
     
     /**
@@ -38,5 +39,16 @@ public class BrochetTigre extends Carnivore {
 
     @Override
     public void effect(Objet objet) {
+        
+                
+        if(this.listeAlimentation.contains(((ObjetBase)objet).getType())){
+            
+            if(this.isHungry()){
+                
+                this.seNourrit((ObjetBase)objet);
+                
+            }
+            
+        }
     }
 }
