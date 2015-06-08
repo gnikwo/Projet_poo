@@ -33,16 +33,16 @@ public class Planorbe extends Detritivore {
     @Override
     public void effect(Objet objet) {
         
-       /* if((this.listeReproduction.contains(((ObjetBase)objet).getType()))) {
+        if((this.listeReproduction.contains(((ObjetBase)objet).getType()))) {
             
-            if(this.phaseReprod()){      LES PLANORBE SONT HERMAPHRODITE =CAS PARTICULIER
+            if(this.phaseReprod()){
             
                 if(!this.gestation)
                     this.seReproduit((ObjetBase) objet);
             
             }
 
-        }*/
+        }
         
         if(this.listeAlimentation.contains(((ObjetBase)objet).getType())){
             

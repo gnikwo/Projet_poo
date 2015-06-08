@@ -59,7 +59,7 @@ public class Maskinonge extends Carnivore {
     @Override
     protected void mettreBas() {
                 
-        if(this.reproducteur.getType() == Type.Maskinonge){
+        if(this.reproducteur.getType() == Type.GrandBrochet){
             Lac.getInstance().add(new BrochetTigre(this.getLeft(), this.getTop()));
         }
         
