@@ -47,7 +47,7 @@ public class GrandBrochet extends Carnivore {
 
         }
         
-        if(this.listeAlimentation.contains(((ObjetBase)objet).getType())){
+        if(this.listeAlimentation.contains( ((ObjetBase)objet).getType() )){
             
             if(this.isHungry()){
                 
