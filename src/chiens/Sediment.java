@@ -13,12 +13,12 @@ public final class Sediment extends ObjetImmobile {
     /**
      * Attribut stockant la quantité de sédiment de type Integer.
      */
-    private int quantite;
+    private int quantite = 100;
     /**
      * Attribut stockant la quantité maximum de sédiment qu'il peut y avoir de
      * type Integer.
      */
-    private int quantiteMax;
+    private int quantiteMax = 10000;
     /**
      * Instancie sédiment.
      */
@@ -82,10 +82,13 @@ public final class Sediment extends ObjetImmobile {
     public Type getType() {
         return Type.Sediment;
     }
+    
+    
     @Override
-
     public void effect(Objet objet) {
     }
+    
+    
      
         
 }
