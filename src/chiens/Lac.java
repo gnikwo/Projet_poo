@@ -37,6 +37,8 @@ public final class Lac extends World {
 
     public static Lac getInstance(){
         
+        //Méthode qui permet d'adapter la fenêtre à la taille de l'écran.
+        
         Dimension tailleEcran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         int hauteur = (int)tailleEcran.getHeight();
         int largeur = (int)tailleEcran.getWidth(); 
@@ -57,6 +59,8 @@ public final class Lac extends World {
 
         this.add(Sediment.getInstance());
 
+        //Permet de fixer la position des poissons grâce aux pourcentages.
+        
         this.add(new Planorbe((int)( this.getWidth()*0.1),(int)(this.getHeight()*0.9)));
         this.add(new Planorbe((int)( this.getWidth()*0.9),(int)(this.getHeight()*0.9)));
         this.add(new Planorbe((int)( this.getWidth()*0.6),(int)(this.getHeight()*0.9)));
@@ -65,33 +69,33 @@ public final class Lac extends World {
         this.add(new BrochetTigre((int)( this.getWidth()*0.7),(int)(this.getHeight()*0.2)));
         
         this.add(new Caneton((int)( this.getWidth()*0.4),(int)(this.getHeight()*0.025)));
-        this.add(new Caneton((int)( this.getWidth()*0.6),(int)(this.getHeight()*0.025)));
-        this.add(new Caneton((int)( this.getWidth()*0.8),(int)(this.getHeight()*0.025)));
+        this.add(new Caneton((int)( this.getWidth()*0.6),(int)(this.getHeight()*0.020)));
+        this.add(new Caneton((int)( this.getWidth()*0.7),(int)(this.getHeight()*0.025)));
         this.add(new Caneton((int)( this.getWidth()*0.2),(int)(this.getHeight()*0.025)));
         this.add(new Caneton((int)( this.getWidth()*0.1),(int)(this.getHeight()*0.025)));
         
         this.add(new Ecrevisse((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.8)));
         this.add(new Ecrevisse((int)( this.getWidth()*0.7),(int)(this.getHeight()*0.8)));
         // A terminer 
-        this.add(new GrandBrochet(110,200));
-        this.add(new GrandBrochet(500,600));
+        this.add(new GrandBrochet((int)( this.getWidth()*0.2),(int)(this.getHeight()*0.2)));
+        this.add(new GrandBrochet((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.3)));
 
         
-        this.add(new Maskinonge(600,350));
-        this.add(new Maskinonge(1450,500));
+        this.add(new Maskinonge((int)( this.getWidth()*0.2),(int)(this.getHeight()*0.7)));
+        this.add(new Maskinonge((int)( this.getWidth()*0.1),(int)(this.getHeight()*0.2)));
         
         
-        this.add(new OtocinclusAffinis(100,600));
-        this.add(new OtocinclusAffinis(1000,500));
-        this.add(new OtocinclusAffinis(200,650));
-        this.add(new OtocinclusAffinis(1200,550));
+        this.add(new OtocinclusAffinis((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.55)));;
+        this.add(new OtocinclusAffinis((int)( this.getWidth()*0.4),(int)(this.getHeight()*0.65)));
+        this.add(new OtocinclusAffinis((int)( this.getWidth()*0.47),(int)(this.getHeight()*0.75)));
+        this.add(new OtocinclusAffinis((int)( this.getWidth()*0.35),(int)(this.getHeight()*0.50)));
         
         
-        this.add(new VegetalMarin((int)( this.getWidth()*0.2),(int)(this.getHeight()*0.77)));
-        this.add(new VegetalMarin((int)( this.getWidth()*0.5),(int)(this.getHeight()*0.75)));
-        this.add(new VegetalMarin((int)( this.getWidth()*0.6),(int)(this.getHeight()*0.75)));
-        this.add(new VegetalMarin((int)( this.getWidth()*0.8),(int)(this.getHeight()*0.75)));
-        this.add(new VegetalMarin((int)( this.getWidth()*0.10),(int)(this.getHeight()*0.75)));
+        this.add(new VegetalMarin((int)( this.getWidth()*0.2),(int)(this.getHeight()*0.66)));
+        this.add(new VegetalMarin((int)( this.getWidth()*0.5),(int)(this.getHeight()*0.66)));
+        this.add(new VegetalMarin((int)( this.getWidth()*0.6),(int)(this.getHeight()*0.66)));
+        this.add(new VegetalMarin((int)( this.getWidth()*0.8),(int)(this.getHeight()*0.66)));
+        this.add(new VegetalMarin((int)( this.getWidth()*0.10),(int)(this.getHeight()*0.66)));
         
 
         
