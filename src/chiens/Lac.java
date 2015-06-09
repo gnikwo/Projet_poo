@@ -99,10 +99,9 @@ public final class Lac extends World {
      * Renvoie l'objet de type t le pres
      * @param o
      * @param s
-     * @param t
      * @return      
      */
-    public ObjetBase plusPres(ObjetBase o, List<Sexe> s) {
+    public ObjetBase plusPresReprod(ObjetBase o, ArrayList<Sexe> s) {
         
         double dist = this.getWidth();
         int indice = 0;
@@ -155,13 +154,13 @@ public final class Lac extends World {
     @Override
     public void createObjects() {
 
-        this.add(Sediment.getInstance());
+        //this.add(Sediment.getInstance());
 
         //Permet de fixer la position des poissons grâce aux pourcentages.
         
-        this.add(new Planorbe((int)( this.getWidth()*0.1),(int)(this.getHeight()*0.9)));
+        /*this.add(new Planorbe((int)( this.getWidth()*0.1),(int)(this.getHeight()*0.9)));
         this.add(new Planorbe((int)( this.getWidth()*0.9),(int)(this.getHeight()*0.9)));
-        this.add(new Planorbe((int)( this.getWidth()*0.6),(int)(this.getHeight()*0.9)));
+        this.add(new Planorbe((int)( this.getWidth()*0.6),(int)(this.getHeight()*0.9)));*/
         
         this.add(new BrochetTigre((int)( this.getWidth()*0.5),(int)(this.getHeight()*0.5)));
         this.add(new BrochetTigre((int)( this.getWidth()*0.7),(int)(this.getHeight()*0.2)));
@@ -172,8 +171,8 @@ public final class Lac extends World {
         this.add(new Caneton((int)( this.getWidth()*0.2),(int)(this.getHeight()*0.025)));
         this.add(new Caneton((int)( this.getWidth()*0.1),(int)(this.getHeight()*0.025)));
         
-        this.add(new Ecrevisse((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.8)));
-        this.add(new Ecrevisse((int)( this.getWidth()*0.7),(int)(this.getHeight()*0.8)));
+        /*this.add(new Ecrevisse((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.8)));
+        this.add(new Ecrevisse((int)( this.getWidth()*0.7),(int)(this.getHeight()*0.8)));*/
         // A terminer 
         this.add(new GrandBrochet((int)( this.getWidth()*0.2),(int)(this.getHeight()*0.2)));
         this.add(new GrandBrochet((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.3)));
@@ -200,4 +199,6 @@ public final class Lac extends World {
         
         
     }
+
+    
 }

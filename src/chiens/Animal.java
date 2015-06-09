@@ -262,7 +262,7 @@ public abstract class Animal extends ObjetDeplacable {
         
         if((phaseReprod())&& (this.getSexe()== Sexe.Femelle)){
         
-            
+            //ObjetBase cibleReprod = Lac.getInstance().plusPresReprod(this, this.listeReproduction);
         
         }
       

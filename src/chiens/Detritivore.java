@@ -27,7 +27,7 @@ public abstract class Detritivore extends Animal {
      * Déplace l'objet
      * @param dt le temps écoulé en millisecondes depuis le précédent déplacement
      */
-    @Override
+   /* @Override
     public void move(long dt) {
         
         ObjetBase cible = Lac.getInstance().plusPres(this, this.listeReproduction);
@@ -38,7 +38,7 @@ public abstract class Detritivore extends Animal {
         
         this.move(diffX/100, diffY/100);
         
-    }
+    }*/
 
   
 

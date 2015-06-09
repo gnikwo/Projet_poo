@@ -64,4 +64,12 @@ public class OtocinclusAffinis extends Omnivore {
         
         
     }
+    
+    
+    @Override
+    public void move(long l) {
+        
+        super.move(l);
+        
+    }
 }

@@ -34,7 +34,7 @@ public class Ecrevisse extends Detritivore {
     @Override
     public void effect(Objet objet) {
             
-        if((this.listeReproduction.contains(((ObjetBase)objet).getType())) && (this.sexe.equals(Sexe.Femelle)) && (((Animal)objet).sexe.equals(Sexe.Male))){
+        /*if((this.listeReproduction.contains(((ObjetBase)objet).getType())) && (this.sexe.equals(Sexe.Femelle)) && (((Animal)objet).sexe.equals(Sexe.Male))){
             
             if(this.phaseReprod()){
             
@@ -53,7 +53,7 @@ public class Ecrevisse extends Detritivore {
                 
             }
             
-        }    
+        }*/    
         
         
     }
@@ -64,8 +64,8 @@ public class Ecrevisse extends Detritivore {
     @Override
     protected void mettreBas() {  
     
-        l.add(new Ecrevisse(this.getLeft(), this.getTop()));
-        this.vitalite -= this.vitaliteMax*0.1;
+        /*l.add(new Ecrevisse(this.getLeft(), this.getTop()));
+        this.vitalite -= this.vitaliteMax*0.1;*/
         
     }
     

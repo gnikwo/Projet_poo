@@ -74,7 +74,9 @@ public class Maskinonge extends Carnivore {
 
     @Override
     public void move(long l) {
+        super.move(l);
     }
+    
 
         
-    }
+}
