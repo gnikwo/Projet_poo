@@ -61,6 +61,6 @@ public class Planorbe extends Detritivore {
     @Override
     protected void mettreBas() {
         l.add(new Planorbe(this.getLeft(), this.getTop()));
-        //this.vitalite -= this.vitaliteMax*0.1;
+        this.vitalite -= this.vitaliteMax*0.1;
     }
 }
