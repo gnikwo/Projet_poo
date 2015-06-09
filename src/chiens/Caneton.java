@@ -33,7 +33,6 @@ public class Caneton extends Herbivore {
     @Override
     public void move(long dt){
         
-        
         this.move(this.vitesseX, Math.sin(this.getLeft()/20));
         
     }

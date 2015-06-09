@@ -245,7 +245,7 @@ public abstract class Animal extends ObjetDeplacable {
     @Override
     public void move(long dt) {
 
-        ObjetBase cible = Lac.getInstance().plusPres(this, this.listeAlimentation);
+        ObjetBase cible = Lac.getInstance().plusPresType(this, this.listeAlimentation);
         
         double diffX = cible.getMiddleX() - this.getMiddleX();
         double diffY = cible.getMiddleY() - this.getMiddleY();
@@ -262,7 +262,7 @@ public abstract class Animal extends ObjetDeplacable {
         
         if((phaseReprod())&& (this.getSexe()== Sexe.Femelle)){
         
-            //ObjetBase cibleReprod = Lac.getInstance().plusPresReprod(this, this.listeReproduction);
+            //ObjetBase cibleReprod = Lac.getInstance().plusPresSexe(this, this.listeReproduction);
         
         }
       

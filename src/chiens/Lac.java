@@ -54,8 +54,8 @@ public final class Lac extends World {
         //Méthode qui permet d'adapter la fenêtre à la taille de l'écran.
         
         Dimension tailleEcran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        int hauteur = (int)tailleEcran.getHeight();
-        int largeur = (int)tailleEcran.getWidth(); 
+        int hauteur = (int)tailleEcran.getHeight()-100;
+        int largeur = (int)tailleEcran.getWidth()-50; 
        
         if(Lac.instance == null)
         
@@ -71,7 +71,7 @@ public final class Lac extends World {
      * @param t
      * @return      
      */
-    public ObjetBase plusPres(ObjetBase o, ArrayList<Type> t) {
+    public ObjetBase plusPresType(ObjetBase o, ArrayList<Type> t) {
         
         double dist = this.getWidth();
         int indice = 0;
@@ -101,7 +101,7 @@ public final class Lac extends World {
      * @param s
      * @return      
      */
-    public ObjetBase plusPresReprod(ObjetBase o, ArrayList<Sexe> s) {
+    public ObjetBase plusPresSexe(ObjetBase o, ArrayList<Sexe> s) {
         
         double dist = this.getWidth();
         int indice = 0;
@@ -154,13 +154,10 @@ public final class Lac extends World {
     @Override
     public void createObjects() {
 
-        //this.add(Sediment.getInstance());
+        this.add(Sediment.getInstance());
 
         //Permet de fixer la position des poissons grâce aux pourcentages.
         
-        /*this.add(new Planorbe((int)( this.getWidth()*0.1),(int)(this.getHeight()*0.9)));
-        this.add(new Planorbe((int)( this.getWidth()*0.9),(int)(this.getHeight()*0.9)));
-        this.add(new Planorbe((int)( this.getWidth()*0.6),(int)(this.getHeight()*0.9)));*/
         
         this.add(new BrochetTigre((int)( this.getWidth()*0.5),(int)(this.getHeight()*0.5)));
         this.add(new BrochetTigre((int)( this.getWidth()*0.7),(int)(this.getHeight()*0.2)));
@@ -171,8 +168,8 @@ public final class Lac extends World {
         this.add(new Caneton((int)( this.getWidth()*0.2),(int)(this.getHeight()*0.025)));
         this.add(new Caneton((int)( this.getWidth()*0.1),(int)(this.getHeight()*0.025)));
         
-        /*this.add(new Ecrevisse((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.8)));
-        this.add(new Ecrevisse((int)( this.getWidth()*0.7),(int)(this.getHeight()*0.8)));*/
+        this.add(new Ecrevisse((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.8)));
+        this.add(new Ecrevisse((int)( this.getWidth()*0.7),(int)(this.getHeight()*0.8)));
         // A terminer 
         this.add(new GrandBrochet((int)( this.getWidth()*0.2),(int)(this.getHeight()*0.2)));
         this.add(new GrandBrochet((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.3)));
@@ -182,6 +179,9 @@ public final class Lac extends World {
         this.add(new Maskinonge((int)( this.getWidth()*0.2),(int)(this.getHeight()*0.7)));
         this.add(new Maskinonge((int)( this.getWidth()*0.1),(int)(this.getHeight()*0.2)));
         
+        this.add(new Planorbe((int)( this.getWidth()*0.1),(int)(this.getHeight()*0.8)));
+        this.add(new Planorbe((int)( this.getWidth()*0.9),(int)(this.getHeight()*0.8)));
+        this.add(new Planorbe((int)( this.getWidth()*0.6),(int)(this.getHeight()*0.8)));
         
         this.add(new OtocinclusAffinis((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.55)));;
         this.add(new OtocinclusAffinis((int)( this.getWidth()*0.4),(int)(this.getHeight()*0.65)));

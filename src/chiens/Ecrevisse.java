@@ -68,5 +68,11 @@ public class Ecrevisse extends Detritivore {
         this.vitalite -= this.vitaliteMax*0.1;*/
         
     }
+
+    @Override
+    public void move(long l) {
+        super.move(l);
+        
+    }
     
 }
