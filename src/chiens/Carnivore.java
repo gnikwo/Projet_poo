@@ -26,4 +26,5 @@ public abstract class Carnivore extends Animal {
         listeReproduction.add(Type.Maskinonge);
         
     }
+    
 }

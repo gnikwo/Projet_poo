@@ -110,6 +110,32 @@ public abstract class Animal extends ObjetDeplacable {
             
         }
         
+        if(this.getRight() > Lac.getInstance().getWidth()){
+            
+            this.moveX(this.getRight() - Lac.getInstance().getWidth());
+            this.vitesseX *= -1;
+            
+        }
+        
+        if(this.getLeft() < 0){
+            
+            this.moveX(Lac.getInstance().getWidth() - Math.abs(this.getLeft()));
+            this.vitesseX *= -1;
+            
+        }
+        
+        if(this.getTop() > 100){
+            
+            this.vitesseY *= -1;
+            
+        }
+            
+        if(this.getBottom() > (Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante())){
+            
+            this.moveY(this.getLeft());
+            this.vitesseY *= -1;
+            
+        }
     }
 
     /**
@@ -219,11 +245,11 @@ public abstract class Animal extends ObjetDeplacable {
         double diffX = cible.getMiddleX() - this.getMiddleX();
         double diffY = cible.getMiddleY() - this.getMiddleY();
         
-        if((diffX<=50) && (diffY<=50) && ((Lac.getInstance().height())<=(Lac.getInstance().height())-500)){
+        if((diffX<=500) && (diffY<=500) && (this.getTop()>= 150)){
             this.move(diffX/100, diffY/100);
         }
         else{
-            //this.move(diffX/100, diffY/100);
+            this.move(diffX/100, 0);
         }
 
         
@@ -237,4 +263,6 @@ public abstract class Animal extends ObjetDeplacable {
       
         
     }
+    
+    
 }

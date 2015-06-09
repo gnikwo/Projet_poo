@@ -55,7 +55,7 @@ public class BrochetTigre extends Carnivore {
     @Override
     public void move(long l) {
         
-        
+        super.move(l);
         
     }
 }

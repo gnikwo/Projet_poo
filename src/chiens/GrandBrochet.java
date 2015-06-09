@@ -83,6 +83,7 @@ public class GrandBrochet extends Carnivore {
 
     @Override
     public void move(long l) {
+        super.move(l);
     }
 
 }

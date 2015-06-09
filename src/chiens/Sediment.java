@@ -41,7 +41,10 @@ public final class Sediment extends ObjetImmobile {
     
     
     
-    public void quantiteCourante() {
+    public int quantiteCourante() {
+        
+        return this.quantite;
+        
     }
 
     

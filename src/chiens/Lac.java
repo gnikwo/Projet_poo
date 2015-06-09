@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Classe représentant le lac ou l'aquarium dans lequel les animaux vont évoluer
@@ -101,7 +102,7 @@ public final class Lac extends World {
      * @param t
      * @return      
      */
-    public ObjetBase plusPres(ObjetBase o, ArrayList<Sexe> s, int p) {
+    public ObjetBase plusPres(ObjetBase o, List<Sexe> s) {
         
         double dist = this.getWidth();
         int indice = 0;
