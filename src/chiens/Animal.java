@@ -204,5 +204,37 @@ public abstract class Animal extends ObjetDeplacable {
      */
     protected boolean isHungry() {
         return this.hunger < 90;
+        
+    }
+    
+    /**
+     * Deplace l'objet
+     * @param dt le temps écoulé en millisecondes depuis le precedent deplacement
+     */
+    @Override
+    public void move(long dt) {
+
+        ObjetBase cible = Lac.getInstance().plusPres(this, this.listeAlimentation);
+        
+        double diffX = cible.getMiddleX() - this.getMiddleX();
+        double diffY = cible.getMiddleY() - this.getMiddleY();
+        
+        if((diffX<=50) && (diffY<=50) && ((Lac.getInstance().height())<=(Lac.getInstance().height())-500)){
+            this.move(diffX/100, diffY/100);
+        }
+        else{
+            //this.move(diffX/100, diffY/100);
+        }
+
+        
+        
+        
+        if((phaseReprod())&& (this.getSexe()== Sexe.Femelle)){
+        
+            
+        
+        }
+      
+        
     }
 }

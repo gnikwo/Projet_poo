@@ -27,22 +27,6 @@ public abstract class Carnivore extends Animal {
         
     }
 
-    /**
-     * Deplace l'objet
-     * @param dt le temps écoulé en millisecondes depuis le precedent deplacement
-     */
-    @Override
-    public void move(long dt) {
-        
-        ObjetBase cible = Lac.getInstance().plusPres(this, this.listeReproduction);
-        
-        double diffX = cible.getMiddleX() - this.getMiddleX();
-        double diffY = cible.getMiddleY() - this.getMiddleY();
-        
-        
-        this.move(diffX/100, diffY/100);
-        
-    }
 
 
 }

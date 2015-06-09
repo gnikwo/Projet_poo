@@ -39,13 +39,18 @@ public final class Sediment extends ObjetImmobile {
 
     }
     
+    
+    
     public void quantiteCourante() {
     }
 
+    
     @Override
     public void estManger() {
     }
 
+    
+    
     /**
      * Fait évoluer l'objet
      * @param dt le temps écoulé depuis la dernière évolution (en ms)
@@ -54,6 +59,7 @@ public final class Sediment extends ObjetImmobile {
     public void evoluate(long dt) {
     }
 
+    
     /**
      * Indique si l'objet est en vie ou non
      * @return true si l'objet est en vie
