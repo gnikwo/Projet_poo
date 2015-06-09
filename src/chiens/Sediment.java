@@ -57,8 +57,9 @@ public final class Sediment extends ObjetImmobile {
      */
     @Override
     public void evoluate(long dt) {
+        // Height = hauteur et Top = le dessus
+        move(0,Lac.getInstance().getHeight()-this.quantite-Sediment.getInstance().getTop());
     }
-
     
     /**
      * Indique si l'objet est en vie ou non
@@ -95,19 +96,5 @@ public final class Sediment extends ObjetImmobile {
     @Override
     public void effect(Objet objet) {
     }
-
-    @Override
-    public void draw(Graphics g){
-        
-        g.setColor(new Color(221 , 152 , 92));
-        /*for(int i = 0; i < Lac.getInstance().getWidth(); i+=20){
-            for(int j = 0; j < this.quantite; j+=5){
-                g.fillOval(i-20, Lac.getInstance().height()-j, 40, 40);
-            }
-        }*/
-    }
-
-    
-     
-        
+       
 }
