@@ -1,5 +1,6 @@
 package chiens;
 
+import iut.Objet;
 import iut.World;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -7,7 +8,7 @@ import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-import java.awt.Toolkit;
+import java.util.ArrayList;
 
 /**
  * Classe représentant le lac ou l'aquarium dans lequel les animaux vont évoluer
@@ -15,6 +16,7 @@ import java.awt.Toolkit;
 public final class Lac extends World {
 
     public static Lac instance;
+    protected ArrayList<ObjetBase> liste = new ArrayList<>();
     
     private Lac(int largeur, int hauteur, String title) {
         super(largeur, hauteur, title);
@@ -50,6 +52,51 @@ public final class Lac extends World {
        return instance;
       
     }
+    
+    /**
+     * Renvoie l'objet de type t le pres
+     * @param o
+     * @param t
+     * @return      
+     */
+    public ObjetBase plusPres(ObjetBase o, ArrayList<Type> t) {
+        
+        double dist = this.getWidth();
+        int indice = 0;
+        
+        for(int i = 0; i < liste.size(); i++){
+            
+            if(this.liste.get(i).distance(o) < dist){
+                
+                if(t.contains(liste.get(i).getType())){
+                    
+                    dist = this.liste.get(i).distance(o);
+                    indice = i;
+                    
+                }
+                
+            }
+                        
+        }
+              
+        return this.liste.get(indice);
+        
+    }
+    
+    @Override
+    public void add(Objet o){
+        super.add(o);
+        this.liste.add((ObjetBase)o);
+    }
+   
+    @Override
+    public void remove(Objet o){
+        
+        super.remove(o);
+        this.liste.remove(o);
+        
+    }
+    
     
     /**
      * créé les objets de départ du monde

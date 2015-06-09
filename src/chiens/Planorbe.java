@@ -33,6 +33,7 @@ public class Planorbe extends Detritivore {
     @Override
     public void effect(Objet objet) {
         
+        System.out.println("A1");
         if((this.listeReproduction.contains(((ObjetBase)objet).getType()))) {
             
             if(this.phaseReprod()){
@@ -44,6 +45,7 @@ public class Planorbe extends Detritivore {
 
         }
         
+        System.out.println("A2");
         if(this.listeAlimentation.contains(((ObjetBase)objet).getType())){
             
             if(this.isHungry()){
@@ -53,11 +55,12 @@ public class Planorbe extends Detritivore {
             }
             
         } 
+        System.out.println("A3");
     }
 
     @Override
     protected void mettreBas() {
         l.add(new Planorbe(this.getLeft(), this.getTop()));
-        this.vitalite -= this.vitaliteMax*0.1;
+        //this.vitalite -= this.vitaliteMax*0.1;
     }
 }

@@ -41,7 +41,6 @@ public class VegetalMarin extends ObjetImmobile {
     public void evoluate(long dt) {
         
         age++;
-        System.out.println(age);
         
         if(age>=ageMax*0.5){
             if(this.vitalite >= vitaliteMax*0.3){

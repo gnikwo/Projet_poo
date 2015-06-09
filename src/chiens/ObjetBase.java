@@ -58,16 +58,12 @@ public abstract class ObjetBase extends ObjetTouchable {
      * @param o
      * @return 
      */
-    public int distance(ObjetBase o) {
-        return 0;
+    public double distance(ObjetBase o) {
+                
+        double a = Math.sqrt(Math.pow(o.getMiddleX(),2) + Math.pow(o.getMiddleY(),2));
+        double b = Math.sqrt(Math.pow(this.getMiddleX(),2) + Math.pow(this.getMiddleY(),2));
+        
+        return Math.abs(a - b);
     }
 
-    /**
-     * Renvoie l'objet de type t le pres
-     * @param t
-     * @return      
-     */
-    public ObjetBase plusPres(Type t) {
-        return null;
-    }
 }

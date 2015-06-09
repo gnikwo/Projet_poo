@@ -28,7 +28,14 @@ public abstract class Herbivore extends Animal {
      */
     @Override
     public void move(long dt) {
-        this.move(vitesseX, vitesseY);
+        
+        ObjetBase cible = Lac.getInstance().plusPres(this, this.listeReproduction);
+        
+        double diffX = cible.getMiddleX() - this.getMiddleX();
+        double diffY = cible.getMiddleY() - this.getMiddleY();
+        
+        
+        this.move(diffX/100, diffY/100);
     }
 
     /**
