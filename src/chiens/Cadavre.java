@@ -46,6 +46,10 @@ public class Cadavre extends ObjetDeplacable {
      */
     @Override
     public void move(long dt) {
+        
+        if(this.getBottom() < Sediment.getInstance().getTop())
+            this.move(0, 5);
+        
         this.move(vitesseX, 0);
     }
 

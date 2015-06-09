@@ -95,6 +95,37 @@ public final class Lac extends World {
     }
     
     /**
+     * Renvoie l'objet de type t le pres
+     * @param o
+     * @param s
+     * @param t
+     * @return      
+     */
+    public ObjetBase plusPres(ObjetBase o, ArrayList<Sexe> s, int p) {
+        
+        double dist = this.getWidth();
+        int indice = 0;
+        
+        for(int i = 0; i < liste.size(); i++){
+            
+            if(this.liste.get(i).distance(o) < dist){
+                
+                if(s.contains(((Animal)(liste.get(i))).getSexe())){
+                    
+                    dist = this.liste.get(i).distance(o);
+                    indice = i;
+                    
+                }
+                
+            }
+                        
+        }
+              
+        return this.liste.get(indice);
+        
+    }
+    
+    /**
      *
      * @param o
      */
@@ -146,6 +177,7 @@ public final class Lac extends World {
         this.add(new GrandBrochet((int)( this.getWidth()*0.2),(int)(this.getHeight()*0.2)));
         this.add(new GrandBrochet((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.3)));
 
+        this.add(new Cadavre((int)( this.getWidth()*0.5), 20));
         
         this.add(new Maskinonge((int)( this.getWidth()*0.2),(int)(this.getHeight()*0.7)));
         this.add(new Maskinonge((int)( this.getWidth()*0.1),(int)(this.getHeight()*0.2)));

@@ -21,6 +21,7 @@ public class GrandBrochet extends Carnivore {
         super("Sprites/grand_brochet", x, y);
         this.sexe = ((int)(Math.random()*2)) > 0.5 ? Sexe.Male : Sexe.Femelle; //condition ternaire : (condition ? retourne ceci si vrai : cela si faux)
         System.out.println("Nouveau GrandBrochet " + this.sexe);
+
     }
 
     /**
@@ -78,6 +79,10 @@ public class GrandBrochet extends Carnivore {
         
         this.vitalite -= this.vitaliteMax * 0.1;
 
+    }
+
+    @Override
+    public void move(long l) {
     }
 
 }
