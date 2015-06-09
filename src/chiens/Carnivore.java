@@ -34,8 +34,6 @@ public abstract class Carnivore extends Animal {
     @Override
     public void move(long dt) {
         
-        
-        
         ObjetBase cible = Lac.getInstance().plusPres(this, this.listeReproduction);
         
         double diffX = cible.getMiddleX() - this.getMiddleX();

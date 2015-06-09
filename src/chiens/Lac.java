@@ -15,7 +15,14 @@ import java.util.ArrayList;
  */
 public final class Lac extends World {
 
+    /**
+     *
+     */
     public static Lac instance;
+
+    /**
+     *
+     */
     protected ArrayList<ObjetBase> liste = new ArrayList<>();
     
     private Lac(int largeur, int hauteur, String title) {
@@ -37,6 +44,10 @@ public final class Lac extends World {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public static Lac getInstance(){
         
         //Méthode qui permet d'adapter la fenêtre à la taille de l'écran.
@@ -83,12 +94,20 @@ public final class Lac extends World {
         
     }
     
+    /**
+     *
+     * @param o
+     */
     @Override
     public void add(Objet o){
         super.add(o);
         this.liste.add((ObjetBase)o);
     }
    
+    /**
+     *
+     * @param o
+     */
     @Override
     public void remove(Objet o){
         
