@@ -13,6 +13,7 @@ public class Caneton extends Herbivore {
     */
    public Caneton( int x, int y) {
        super ( "Sprites/caneton", x, y);
+       this.vitesseX = -2;
    }
 
     /**
@@ -27,4 +28,14 @@ public class Caneton extends Herbivore {
     @Override
     protected void mettreBas() {
     }
+    
+    
+    @Override
+    public void move(long dt){
+        
+        
+        this.move(this.vitesseX, Math.sin(this.getLeft()/20));
+        
+    }
+     
 }
