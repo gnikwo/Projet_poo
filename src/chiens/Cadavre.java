@@ -36,7 +36,11 @@ public class Cadavre extends ObjetDeplacable {
     @Override
     public void evoluate(long dt) {
         
-        
+        if(this.vitalite <= 0){
+            
+            this.estMort();
+            
+        }
         
     }
 
@@ -65,6 +69,7 @@ public class Cadavre extends ObjetDeplacable {
     @Override
     public void effect(Objet objet) {
     }
+    
     @Override
     public void estMort(){
         System.out.println("Deviens sédiment");

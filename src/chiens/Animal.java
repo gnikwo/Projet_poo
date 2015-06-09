@@ -83,7 +83,7 @@ public abstract class Animal extends ObjetDeplacable {
      */
     @Override
     public void evoluate(long dt) {
-        
+        try{
         if(this.gestation)
             this.tpsGestation += 10;
         
@@ -134,6 +134,11 @@ public abstract class Animal extends ObjetDeplacable {
             
             this.moveY(this.getLeft());
             this.vitesseY *= -1;
+            
+        }
+        }catch(Exception e){
+            
+            System.out.println(e.getMessage());
             
         }
     }
