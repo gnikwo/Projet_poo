@@ -25,7 +25,7 @@ public class Cadavre extends ObjetDeplacable {
     @Override
     public boolean isAlive() {
 
-        return true;
+        return false;
         
     }
 
@@ -76,7 +76,7 @@ public class Cadavre extends ObjetDeplacable {
     @Override
     public void estMort(){
         System.out.println("Deviens sédiment");
-        Sediment.getInstance().addMatiere(10);
+       // Sediment.getInstance().addMatiere(10);
         
         try {
             Lac.getInstance().remove(this);

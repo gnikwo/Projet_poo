@@ -1,6 +1,5 @@
 package chiens;
 
-import iut.Audio;
 import java.util.ArrayList;
 
 /**
@@ -227,7 +226,7 @@ public abstract class Animal extends ObjetDeplacable {
     @Override
     public void move(long dt) {
 
-       /* ObjetBase predateur = Lac.getInstance().plusPresType(this, this.listePredateur);
+        ObjetBase predateur = Lac.getInstance().plusPresType(this, this.listePredateur);
         ObjetBase proie = Lac.getInstance().plusPresType(this, this.listeAlimentation);
         
         double distPredateurX = predateur.getMiddleX() - this.getMiddleX();
@@ -236,11 +235,11 @@ public abstract class Animal extends ObjetDeplacable {
         double distProieX = proie.getMiddleX() - this.getMiddleX();
         double distProieY = proie.getMiddleY() - this.getMiddleY();
         
-        if(Math.sqrt(Math.pow(distPredateurX,2)) + Math.sqrt(Math.pow(distPredateurX,2)) > 100){
+        if(Math.sqrt(Math.pow(distPredateurX,2)) + Math.sqrt(Math.pow(distPredateurX,2)) < 100){
             
             this.move(distPredateurX/10, distPredateurX/10);
             
-        }else if(Math.sqrt(Math.pow(distProieX,2)) + Math.sqrt(Math.pow(distProieX,2)) > 100){
+        }else if(Math.sqrt(Math.pow(distProieX,2)) + Math.sqrt(Math.pow(distProieX,2)) < 100){
             
             this.move(distProieX/10, distProieX/10);
             
@@ -269,6 +268,12 @@ public abstract class Animal extends ObjetDeplacable {
         }
         
         
+        if(this.getMiddleX() > Lac.getInstance().getWidth()){
+
+            this.moveX(this.getMiddleX() - Lac.getInstance().getWidth());
+
+        }
+
         if(this.getMiddleX() < 0){
 
             this.moveX(Lac.getInstance().getWidth() - Math.abs(this.getMiddleX()));
@@ -284,9 +289,9 @@ public abstract class Animal extends ObjetDeplacable {
 
         if(this.getBottom() > (Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante())){
 
-            this.moveY(this.getLeft());
+            this.moveY(Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante() - this.getBottom());
 
-        }*/
+        }
       
         
     }

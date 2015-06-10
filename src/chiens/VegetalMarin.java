@@ -40,8 +40,7 @@ public class VegetalMarin extends ObjetImmobile {
     @Override
     public void evoluate(long dt) {
                 
-        if(this.getBottom() > Sediment.getInstance().getTop())
-            this.moveY(Sediment.getInstance().getTop()-this.getBottom());
+        this.moveY(Sediment.getInstance().getTop()-this.getBottom());
         
         age++;
         
@@ -73,7 +72,7 @@ public class VegetalMarin extends ObjetImmobile {
     @Override
     public void estMort() {
         
-        Sediment.getInstance().addMatiere(10);
+        //Sediment.getInstance().addMatiere(10);
         
         try {
             Lac.getInstance().remove(this);

@@ -16,7 +16,6 @@ public abstract class Detritivore extends Animal {
         listeAlimentation.add(Type.Sediment);
         
              
-        listeReproduction.add(Type.Ecrevisse);
 
         
     }

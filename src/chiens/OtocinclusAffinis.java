@@ -19,6 +19,12 @@ public class OtocinclusAffinis extends Omnivore {
                 
         this.sexe = ((int)(Math.random()*2)) > 0.5 ? Sexe.Male : Sexe.Femelle; //condition ternaire : (condition ? retourne ceci si vrai : cela si faux)
         System.out.println("Nouveau OtocinclusAffinis" + this.sexe);
+        
+        
+        this.listePredateur.add(Type.BrochetTigre);
+        this.listePredateur.add(Type.GrandBrochet);
+        this.listePredateur.add(Type.Maskinonge);
+        
     }
 
     /**

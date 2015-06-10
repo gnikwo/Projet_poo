@@ -19,6 +19,10 @@ public class Planorbe extends Detritivore {
         super("Sprites/planorbe", x, y);
         
         System.out.println("Nouveau Planorbe");
+        
+        this.listePredateur.add(Type.Ecrevisse);
+        this.listePredateur.add(Type.OtocinclusAffinis);
+        
     }
 
     /**
@@ -66,6 +70,14 @@ public class Planorbe extends Detritivore {
 
     @Override
     public void move(long l) {
+        
         super.move(l);
+        
+        if(this.getBottom() < Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante()){
+            
+            this.moveY(Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante() - this.getBottom());
+            
+        }
+        
     }
 }

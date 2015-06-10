@@ -20,6 +20,14 @@ public class Ecrevisse extends Detritivore {
         
         this.sexe = ((int)(Math.random()*2)) > 0.5 ? Sexe.Male : Sexe.Femelle; //condition ternaire : (condition ? retourne ceci si vrai : cela si faux)
         System.out.println("Nouvelle Ecrevisse" + this.sexe);
+        
+        this.listePredateur.add(Type.BrochetTigre);
+        this.listePredateur.add(Type.GrandBrochet);
+        this.listePredateur.add(Type.Maskinonge);
+        
+        
+        listeReproduction.add(Type.Ecrevisse);
+        
     }
 
     /**
@@ -34,7 +42,7 @@ public class Ecrevisse extends Detritivore {
     @Override
     public void effect(Objet objet) {
             
-        /*if((this.listeReproduction.contains(((ObjetBase)objet).getType())) && (this.sexe.equals(Sexe.Femelle)) && (((Animal)objet).sexe.equals(Sexe.Male))){
+        if((this.listeReproduction.contains(((ObjetBase)objet).getType())) && (this.sexe.equals(Sexe.Femelle)) && (((Animal)objet).sexe.equals(Sexe.Male))){
             
             if(this.phaseReprod()){
             
@@ -53,7 +61,7 @@ public class Ecrevisse extends Detritivore {
                 
             }
             
-        }*/    
+        }
         
         
     }
@@ -64,14 +72,21 @@ public class Ecrevisse extends Detritivore {
     @Override
     protected void mettreBas() {  
     
-        /*l.add(new Ecrevisse(this.getLeft(), this.getTop()));
-        this.vitalite -= this.vitaliteMax*0.1;*/
+        l.add(new Ecrevisse(this.getLeft(), this.getTop()));
+        this.vitalite -= this.vitaliteMax*0.1;
         
     }
 
     @Override
     public void move(long l) {
+        
         super.move(l);
+        
+        if(this.getBottom() < Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante()){
+            
+            this.moveY(Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante() - this.getBottom());
+            
+        }
         
     }
     
