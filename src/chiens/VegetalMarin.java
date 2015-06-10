@@ -39,6 +39,9 @@ public class VegetalMarin extends ObjetImmobile {
     */
     @Override
     public void evoluate(long dt) {
+                
+        if(this.getBottom() > Sediment.getInstance().getTop())
+            this.moveY(Sediment.getInstance().getTop()-this.getBottom());
         
         age++;
         

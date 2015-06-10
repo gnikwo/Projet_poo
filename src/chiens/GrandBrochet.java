@@ -39,7 +39,7 @@ public class GrandBrochet extends Carnivore {
         
         if((this.listeReproduction.contains(((ObjetBase)objet).getType())) && (this.sexe.equals(Sexe.Femelle)) && (((Animal)objet).sexe.equals(Sexe.Male))){
             
-            if(this.phaseReprod()){
+            if(this.phaseReprod() && (this.maturite)){
             
                 if(!this.gestation)
                     this.seReproduit((ObjetBase) objet);

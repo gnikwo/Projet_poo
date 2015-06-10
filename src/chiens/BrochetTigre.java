@@ -15,7 +15,8 @@ public class BrochetTigre extends Carnivore {
      * @param y
      */
     public BrochetTigre(int x, int y) {
-        super("sprites/brochet_tigre", x, y);
+        
+        super("Sprites/brochet_tigre", x, y);
         this.sexe = ((int)(Math.random()*2)) > 0.5 ? Sexe.Male : Sexe.Femelle; //condition ternaire : (condition ? retourne ceci si vrai : cela si faux)
         System.out.println("Nouveau BrochetTigre " + this.sexe);
     }

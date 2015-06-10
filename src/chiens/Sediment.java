@@ -15,7 +15,7 @@ public final class Sediment extends ObjetImmobile {
     /**
      * Attribut stockant la quantité de sédiment de type Integer.
      */
-    private int quantite = 100;
+    private int quantite = 10;
     /**
      * Attribut stockant la quantité maximum de sédiment qu'il peut y avoir de
      * type Integer.
