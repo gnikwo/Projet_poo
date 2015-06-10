@@ -84,56 +84,60 @@ public abstract class Animal extends ObjetDeplacable {
     @Override
     public void evoluate(long dt) {
         try{
-        if(this.gestation)
-            this.tpsGestation += 10;
-        
-        if(this.tpsGestation >= this.tpsGestationMax){
             
-            this.mettreBas();
-            this.tpsGestation = 0;
-            this.tpsDepuisBas = 0;
-            this.gestation = false;
+            if(this.gestation)
+                this.tpsGestation += 10;
+
+            if(this.tpsGestation >= this.tpsGestationMax){
+
+                this.mettreBas();
+                this.tpsGestation = 0;
+                this.tpsDepuisBas = 0;
+                this.gestation = false;
             
-        }
-        
-        this.hunger--;
-        
-        if(this.hunger <= 0){
-            
-            this.vitalite--;
-            
-        }
-        
-        if(this.vitalite <= 0){
-            
-            this.estMort();
-            
-        }
-        
-        if(this.getRight() > Lac.getInstance().getWidth()){
-            
-            this.moveX(this.getRight() - Lac.getInstance().getWidth());
-            this.vitesseX *= -1;
-            
-        }
-        
-        if(this.getLeft() < 0){
-            
-            this.moveX(Lac.getInstance().getWidth() - Math.abs(this.getLeft()));
-            this.vitesseX *= -1;
-            
-        }
-        
-        if(this.getTop() > 100){
-            
-            this.vitesseY *= -1;
-            
-        }
-            
-        if(this.getBottom() > (Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante())){
-            
-            this.moveY(this.getLeft());
-            this.vitesseY *= -1;
+            }
+
+            this.hunger--;
+
+            if(this.hunger <= 0){
+
+                this.vitalite--;
+
+            }
+
+            if(this.vitalite <= 0){
+
+                this.estMort();
+
+            }
+
+            if(this.getRight() > Lac.getInstance().getWidth()){
+
+                this.moveX(this.getRight() - Lac.getInstance().getWidth());
+                this.vitesseX *= -1;
+
+            }
+
+            if(this.getLeft() < 0){
+
+                this.moveX(Lac.getInstance().getWidth() - Math.abs(this.getLeft()));
+                this.vitesseX *= -1;
+
+            }
+
+            if(this.getTop() > 100){
+
+                this.vitesseY *= -1;
+
+            }
+
+            if(this.getBottom() > (Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante())){
+
+                this.moveY(this.getLeft());
+                this.vitesseY *= -1;
+                
+            if(this.age > ageMax*0.3)
+                this.maturite = true;
             
         }
         }catch(Exception e){
