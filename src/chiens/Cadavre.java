@@ -57,7 +57,7 @@ public class Cadavre extends ObjetDeplacable {
         if(this.getBottom() > Sediment.getInstance().getTop())
             this.moveY(Sediment.getInstance().getTop()-this.getBottom());
         
-        this.move(vitesseX, 0);
+        this.move(-vitesseX, 0);
     }
 
     /**

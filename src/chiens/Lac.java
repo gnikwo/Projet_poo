@@ -101,7 +101,7 @@ public final class Lac extends World {
      * @param s
      * @return      
      */
-    public ObjetBase plusPresSexe(ObjetBase o, ArrayList<Sexe> s) {
+    public ObjetBase plusPresSexe(ObjetBase o, Sexe s) {
         
         double dist = this.getWidth();
         int indice = 0;
@@ -110,7 +110,7 @@ public final class Lac extends World {
             
             if(this.liste.get(i).distance(o) < dist){
                 
-                if(s.contains(((Animal)(liste.get(i))).getSexe())){
+                if(s.equals(((Animal)(liste.get(i))).getSexe())){
                     
                     dist = this.liste.get(i).distance(o);
                     indice = i;

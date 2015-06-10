@@ -1,5 +1,6 @@
 package chiens;
 
+import iut.Audio;
 import java.util.ArrayList;
 
 /**
@@ -52,6 +53,7 @@ public abstract class Animal extends ObjetDeplacable {
     protected int hunger = 100;
     protected Sexe sexe = null;
     protected ArrayList<Type> listeReproduction = new ArrayList<>();
+    protected ArrayList<Type> listePredateur = new ArrayList<>();
 
     /**
      * Constructeur de la classe animal
@@ -62,6 +64,7 @@ public abstract class Animal extends ObjetDeplacable {
      */
     public Animal( String nom, int x, int y) {
         super( nom, x, y);
+        
     }
 
     /**
@@ -110,34 +113,11 @@ public abstract class Animal extends ObjetDeplacable {
                 this.estMort();
 
             }
-
-            if(this.getMiddleX() > Lac.getInstance().getWidth()){
-
-                this.moveX(this.getMiddleX() - Lac.getInstance().getWidth());
-
-            }
-
-            if(this.getMiddleX() < 0){
-
-                this.moveX(Lac.getInstance().getWidth() - Math.abs(this.getMiddleX()));
-
-            }
-
-            if(this.getTop() > 100){
-                
-                this.moveY(100 - this.getTop());
-
-
-            }
-
-            if(this.getBottom() > (Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante())){
-
-                this.moveY(this.getLeft());
                 
             if(this.age > ageMax*0.3)
                 this.maturite = true;
             
-        }
+            
         }catch(Exception e){
             
             System.out.println(e.getMessage());
@@ -247,26 +227,66 @@ public abstract class Animal extends ObjetDeplacable {
     @Override
     public void move(long dt) {
 
-        ObjetBase cible = Lac.getInstance().plusPresType(this, this.listeAlimentation);
+       /* ObjetBase predateur = Lac.getInstance().plusPresType(this, this.listePredateur);
+        ObjetBase proie = Lac.getInstance().plusPresType(this, this.listeAlimentation);
         
-        double diffX = cible.getMiddleX() - this.getMiddleX();
-        double diffY = cible.getMiddleY() - this.getMiddleY();
+        double distPredateurX = predateur.getMiddleX() - this.getMiddleX();
+        double distPredateurY = predateur.getMiddleY() - this.getMiddleY();
         
-        if((diffX<=500) && (diffY<=500) && (this.getTop()>= 150)){
-            this.move(diffX/100, diffY/100);
+        double distProieX = proie.getMiddleX() - this.getMiddleX();
+        double distProieY = proie.getMiddleY() - this.getMiddleY();
+        
+        if(Math.sqrt(Math.pow(distPredateurX,2)) + Math.sqrt(Math.pow(distPredateurX,2)) > 100){
+            
+            this.move(distPredateurX/10, distPredateurX/10);
+            
+        }else if(Math.sqrt(Math.pow(distProieX,2)) + Math.sqrt(Math.pow(distProieX,2)) > 100){
+            
+            this.move(distProieX/10, distProieX/10);
+            
+        }else if(this.getSexe()== Sexe.Femelle){
+        
+            if(this.phaseReprod()){
+                
+                ObjetBase cible = Lac.getInstance().plusPresType(this, this.listeReproduction);
+                double diffX = cible.getMiddleX() - this.getMiddleX();
+                double diffY = cible.getMiddleY() - this.getMiddleY();
+                this.move(diffX/10, diffY/10);
+            
+            }else if(this.gestation()){
+                
+                ObjetBase cible = Lac.getInstance().plusPresSexe(this, Sexe.Male);
+                double diffX = cible.getMiddleX() - this.getMiddleX();
+                double diffY = cible.getMiddleY() - this.getMiddleY();
+                this.move(-diffX/10, -diffY/10);
+                
+            }
+            
+        }else{
+            
+            this.move(vitesseX, vitesseY);
+            
         }
-        else{
-            this.move(diffX/100, 0);
+        
+        
+        if(this.getMiddleX() < 0){
+
+            this.moveX(Lac.getInstance().getWidth() - Math.abs(this.getMiddleX()));
+
         }
 
-        
-        
-        
-        if((phaseReprod())&& (this.getSexe()== Sexe.Femelle)){
-        
-            //ObjetBase cibleReprod = Lac.getInstance().plusPresSexe(this, this.listeReproduction);
-        
+        if(this.getTop() < 100){
+
+            this.moveY(100 - this.getTop());
+
+
         }
+
+        if(this.getBottom() > (Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante())){
+
+            this.moveY(this.getLeft());
+
+        }*/
       
         
     }
