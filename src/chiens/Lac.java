@@ -170,7 +170,7 @@ public final class Lac extends World {
         
         this.add(new Ecrevisse((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.8)));
         this.add(new Ecrevisse((int)( this.getWidth()*0.7),(int)(this.getHeight()*0.8)));
-        // A terminer 
+        
         this.add(new GrandBrochet((int)( this.getWidth()*0.2),(int)(this.getHeight()*0.2)));
         this.add(new GrandBrochet((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.3)));
 

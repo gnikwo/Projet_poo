@@ -111,30 +111,28 @@ public abstract class Animal extends ObjetDeplacable {
 
             }
 
-            if(this.getRight() > Lac.getInstance().getWidth()){
+            if(this.getMiddleX() > Lac.getInstance().getWidth()){
 
-                this.moveX(this.getRight() - Lac.getInstance().getWidth());
-                this.vitesseX *= -1;
+                this.moveX(this.getMiddleX() - Lac.getInstance().getWidth());
 
             }
 
-            if(this.getLeft() < 0){
+            if(this.getMiddleX() < 0){
 
-                this.moveX(Lac.getInstance().getWidth() - Math.abs(this.getLeft()));
-                this.vitesseX *= -1;
+                this.moveX(Lac.getInstance().getWidth() - Math.abs(this.getMiddleX()));
 
             }
 
             if(this.getTop() > 100){
+                
+                this.moveY(100 - this.getTop());
 
-                this.vitesseY *= -1;
 
             }
 
             if(this.getBottom() > (Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante())){
 
                 this.moveY(this.getLeft());
-                this.vitesseY *= -1;
                 
             if(this.age > ageMax*0.3)
                 this.maturite = true;

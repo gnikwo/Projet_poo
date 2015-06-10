@@ -17,7 +17,6 @@ public abstract class Carnivore extends Animal {
 
         super(nom, x, y);
 
-        listeAlimentation.add(Type.Caneton);
         listeAlimentation.add(Type.OtocinclusAffinis);
         listeAlimentation.add(Type.Planorbe);
         listeAlimentation.add(Type.Ecrevisse);

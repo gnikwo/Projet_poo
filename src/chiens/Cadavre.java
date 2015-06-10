@@ -76,7 +76,7 @@ public class Cadavre extends ObjetDeplacable {
     @Override
     public void estMort(){
         System.out.println("Deviens sédiment");
-        Sediment.getInstance().addMatiere(100);
+        Sediment.getInstance().addMatiere(10);
         
         try {
             Lac.getInstance().remove(this);
