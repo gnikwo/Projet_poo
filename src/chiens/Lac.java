@@ -5,6 +5,10 @@ import iut.World;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -191,6 +195,8 @@ public final class Lac extends World {
     @Override
     public void createObjects() {
 
+        
+        
         this.add(Sediment.getInstance());
 
         //Permet de fixer la position des poissons grâce aux pourcentages.
@@ -234,7 +240,89 @@ public final class Lac extends World {
         
 
         
+        this.addMouseInteractiveObject(new MouseHandler());
         
+        
+    }
+
+    private static class MouseHandler implements MouseMotionListener, MouseListener {
+        
+        public MouseHandler() {
+            
+            
+        }
+
+        @Override
+        public void mouseDragged(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseMoved(MouseEvent e) {
+            
+            int x = e.getX();
+            int y = e.getY();
+            
+            for(int i = 0; i < Lac.getInstance().liste.size(); i++){
+                
+                ObjetBase o = Lac.getInstance().liste.get(i);
+                
+                if( x > o.getLeft() && x < o.getRight()){
+                    
+                    if( y > o.getBottom() && y < o.getTop()){
+                    
+                        System.out.println(o.getType());
+                        o.estMort();
+                    
+                    }   
+                    
+                }                
+                
+            }
+            
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+             
+            int x = e.getX();
+            int y = e.getY();
+            
+            System.out.println("Mouse clicked at : " + x + " ; " + y);
+            for(int i = 0; i < Lac.getInstance().liste.size(); i++){
+                
+                ObjetBase o = Lac.getInstance().liste.get(i);
+                
+                if( x > o.getLeft() && x < o.getRight()){
+                    
+                    if( y < o.getBottom() && y > o.getTop()){
+                    
+                        System.out.println(o.getType());
+                        o.estMort();
+                    
+                    }   
+                    
+                }                
+                
+            }
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            
+        }
     }
 
     

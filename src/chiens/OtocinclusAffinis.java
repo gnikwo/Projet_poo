@@ -18,7 +18,6 @@ public class OtocinclusAffinis extends Omnivore {
         super("Sprites/otocinclus_affinis", x, y);
                 
         this.sexe = ((int)(Math.random()*2)) > 0.5 ? Sexe.Male : Sexe.Femelle; //condition ternaire : (condition ? retourne ceci si vrai : cela si faux)
-        System.out.println("Nouveau OtocinclusAffinis" + this.sexe);
         
         
         this.listePredateur.add(Type.BrochetTigre);
@@ -50,7 +49,7 @@ public class OtocinclusAffinis extends Omnivore {
     protected void mettreBas() {
         
             
-        l.add(new OtocinclusAffinis(this.getLeft(), this.getTop()));
+        Lac.getInstance().add(new OtocinclusAffinis(this.getLeft()+(int)(Math.random()*50)-25, this.getTop()+(int)(Math.random()*50)-25));
         this.vitalite -= this.vitaliteMax*0.1;
     }
     

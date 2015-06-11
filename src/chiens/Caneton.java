@@ -14,7 +14,9 @@ public class Caneton extends Herbivore {
    public Caneton( int x, int y) {
        super ( "Sprites/caneton", x, y);
        
-       this.ageMax = 900;
+       this.ageMax = 9000;
+       this.vitalite = 1000;
+       this.vitaliteMax = 1000;
    }
 
     /**
@@ -33,6 +35,7 @@ public class Caneton extends Herbivore {
     
     @Override
     public void move(long dt){
+        
         
         this.move(this.vitesseX, Math.sin(this.getMiddleX()/10)/2);
         

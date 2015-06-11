@@ -237,11 +237,23 @@ public abstract class Animal extends ObjetDeplacable {
         
         if(Math.sqrt(Math.pow(distPredateurX,2)) + Math.sqrt(Math.pow(distPredateurY,2)) < 300){
             
-            this.move(-distPredateurX/10, -distPredateurY/10);
-                        
+            this.move(-distPredateurX/20, -distPredateurY/20);
+            if(vitesseX/vitesseY != -distPredateurX/-distPredateurY){
+                
+                vitesseX = -distPredateurX/20;
+                vitesseY = -distPredateurY/20;
+                
+            }
+                                        
         }else if(Math.sqrt(Math.pow(distProieX,2)) + Math.sqrt(Math.pow(distProieY,2)) < 200){
             
             this.move(distProieX/10, distProieY/10);
+            if(vitesseX/vitesseY != distProieX/distProieY){
+                
+                vitesseX = distProieX/20;
+                vitesseY = distProieY/20;
+                
+            }
             
         }else if(this.getSexe()== Sexe.Femelle){
         
@@ -255,11 +267,23 @@ public abstract class Animal extends ObjetDeplacable {
             
             if(this.phaseReprod() && Math.sqrt(Math.pow(distReproducteurX,2)) + Math.sqrt(Math.pow(distReproducteurY, 2)) < 200){
                 
-                this.move(distReproducteurX/10, distReproducteurY/10);
+                this.move(distReproducteurX/20, distReproducteurY/20);
+            if(vitesseX/vitesseY != distReproducteurX/distReproducteurY){
+                
+                vitesseX = distReproducteurX/20;
+                vitesseY = distReproducteurY/20;
+                
+            }
             
             }else if(this.gestation() && Math.sqrt(Math.pow(distMaleX,2)) + Math.sqrt(Math.pow(distMaleY, 2)) < 200){
                 
-                this.move(-distMaleX/10, -distMaleY/10);
+                this.move(-distMaleX/20, -distMaleY/20);
+            if(vitesseX/vitesseY != -distMaleX/-distMaleY){
+                
+                vitesseX = -distMaleX/20;
+                vitesseY = -distMaleY/20;
+                
+            }
                 
             }else{
                 

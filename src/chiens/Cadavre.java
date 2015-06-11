@@ -39,7 +39,6 @@ public class Cadavre extends ObjetDeplacable {
     public void evoluate(long dt) {
         
         vitalite--;
-            System.out.println("vie cadavre : "+ vitalite);
         if(this.vitalite <= 0){
             
             this.estMort();

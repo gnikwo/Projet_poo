@@ -19,7 +19,6 @@ public class Ecrevisse extends Detritivore {
         super("Sprites/ecrevisse", x, y);
         
         this.sexe = ((int)(Math.random()*2)) > 0.5 ? Sexe.Male : Sexe.Femelle; //condition ternaire : (condition ? retourne ceci si vrai : cela si faux)
-        System.out.println("Nouvelle Ecrevisse" + this.sexe);
         
         this.listePredateur.add(Type.BrochetTigre);
         this.listePredateur.add(Type.GrandBrochet);

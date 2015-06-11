@@ -18,7 +18,6 @@ public class Planorbe extends Detritivore {
     public Planorbe(int x, int y) {
         super("Sprites/planorbe", x, y);
         
-        System.out.println("Nouveau Planorbe");
         
         this.listePredateur.add(Type.OtocinclusAffinis);
         

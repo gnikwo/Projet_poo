@@ -42,7 +42,7 @@ public abstract class ObjetBase extends ObjetTouchable {
     
     public void estMort(){
         System.out.println("est Mort");
-        Lac.getInstance().add(new Cadavre(this.getLeft(), this.getTop()));
+        Lac.getInstance().add(new Cadavre(this.getMiddleX(), this.getMiddleY()));
         
         try {
             Lac.getInstance().remove(this);
