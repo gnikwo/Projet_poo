@@ -16,7 +16,7 @@ public abstract class Animal extends ObjetDeplacable {
     /**
      * Stocke l'âge maximum que peuvent atteindre les animaux.
      */
-    protected int ageMax = 100;
+    protected int ageMax;
     /**
      * Stocke l'âge actuel des animaux.
      */
@@ -29,7 +29,7 @@ public abstract class Animal extends ObjetDeplacable {
      * Borne de fin de la gestion de l'animal. Lorsqu'elle est atteinte,
      * l'animal met bas
      */
-    protected int tpsGestationMax = 500;
+    protected int tpsGestationMax;
     /**
      * Stocke le temps de gestation courant de l'animal
      */
@@ -37,11 +37,11 @@ public abstract class Animal extends ObjetDeplacable {
     /**
      * Borne à atteindre avant de pouvoir remettre à bas
      */
-    protected int tpsDepuisBasLimite = 500;
+    protected int tpsDepuisBasLimite;
     /**
      * Stocke le temps passé depuis la dernière mise à bas
      */
-    protected int tpsDepuisBas = 600;
+    protected int tpsDepuisBas;
     /**
      *
      */
@@ -63,7 +63,7 @@ public abstract class Animal extends ObjetDeplacable {
      */
     public Animal( String nom, int x, int y) {
         super( nom, x, y);
-        
+               
     }
 
     /**
@@ -119,7 +119,7 @@ public abstract class Animal extends ObjetDeplacable {
             
         }catch(Exception e){
             
-            System.out.println(e.getMessage());
+            System.out.println(this.getType() + " : " + e.getMessage());
             
         }
     }
@@ -235,29 +235,35 @@ public abstract class Animal extends ObjetDeplacable {
         double distProieX = proie.getMiddleX() - this.getMiddleX();
         double distProieY = proie.getMiddleY() - this.getMiddleY();
         
-        if(Math.sqrt(Math.pow(distPredateurX,2)) + Math.sqrt(Math.pow(distPredateurX,2)) < 100){
+        if(Math.sqrt(Math.pow(distPredateurX,2)) + Math.sqrt(Math.pow(distPredateurY,2)) < 300){
             
-            this.move(distPredateurX/10, distPredateurX/10);
+            this.move(-distPredateurX/10, -distPredateurY/10);
+                        
+        }else if(Math.sqrt(Math.pow(distProieX,2)) + Math.sqrt(Math.pow(distProieY,2)) < 200){
             
-        }else if(Math.sqrt(Math.pow(distProieX,2)) + Math.sqrt(Math.pow(distProieX,2)) < 100){
-            
-            this.move(distProieX/10, distProieX/10);
+            this.move(distProieX/10, distProieY/10);
             
         }else if(this.getSexe()== Sexe.Femelle){
         
-            if(this.phaseReprod()){
-                
-                ObjetBase cible = Lac.getInstance().plusPresType(this, this.listeReproduction);
-                double diffX = cible.getMiddleX() - this.getMiddleX();
-                double diffY = cible.getMiddleY() - this.getMiddleY();
-                this.move(diffX/10, diffY/10);
+            ObjetBase reproducteur = Lac.getInstance().plusPresRepro(this, this.listeReproduction);
+            double distReproducteurX = reproducteur.getMiddleX() - this.getMiddleX();
+            double distReproducteurY = reproducteur.getMiddleY() - this.getMiddleY();
+
+            ObjetBase male = Lac.getInstance().plusPresSexe(this, Sexe.Male);
+            double distMaleX = male.getMiddleX() - this.getMiddleX();
+            double distMaleY = male.getMiddleY() - this.getMiddleY();
             
-            }else if(this.gestation()){
+            if(this.phaseReprod() && Math.sqrt(Math.pow(distReproducteurX,2)) + Math.sqrt(Math.pow(distReproducteurY, 2)) < 200){
                 
-                ObjetBase cible = Lac.getInstance().plusPresSexe(this, Sexe.Male);
-                double diffX = cible.getMiddleX() - this.getMiddleX();
-                double diffY = cible.getMiddleY() - this.getMiddleY();
-                this.move(-diffX/10, -diffY/10);
+                this.move(distReproducteurX/10, distReproducteurY/10);
+            
+            }else if(this.gestation() && Math.sqrt(Math.pow(distMaleX,2)) + Math.sqrt(Math.pow(distMaleY, 2)) < 200){
+                
+                this.move(-distMaleX/10, -distMaleY/10);
+                
+            }else{
+                
+                this.move(vitesseX, vitesseY);
                 
             }
             
@@ -270,10 +276,11 @@ public abstract class Animal extends ObjetDeplacable {
         
         if(this.getMiddleX() > Lac.getInstance().getWidth()){
 
-            this.moveX(this.getMiddleX() - Lac.getInstance().getWidth());
+            System.out.println( this.getMiddleX() - Lac.getInstance().getWidth());
+            this.moveX(- (Lac.getInstance().getWidth()));
 
         }
-
+        
         if(this.getMiddleX() < 0){
 
             this.moveX(Lac.getInstance().getWidth() - Math.abs(this.getMiddleX()));
@@ -283,6 +290,7 @@ public abstract class Animal extends ObjetDeplacable {
         if(this.getTop() < 100){
 
             this.moveY(100 - this.getTop());
+            this.vitesseY *= -1;
 
 
         }
@@ -290,6 +298,7 @@ public abstract class Animal extends ObjetDeplacable {
         if(this.getBottom() > (Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante())){
 
             this.moveY(Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante() - this.getBottom());
+            this.vitesseY *= -1;
 
         }
       

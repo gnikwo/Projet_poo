@@ -17,10 +17,10 @@ public class VegetalMarin extends ObjetImmobile {
     /**
     * Attribut stockant l'âge maximum qu'un végétal marin peut atteindre de type Integer.
     */
-    private int ageMax=100;
+    private int ageMax = 100;
     
-    private int vitalite=120;
-    private int vitaliteMax=120;
+    private int vitalite = 120;
+    private int vitaliteMax = 120;
 
     /**
     * Constructeur de la classe VégetalMarin.
@@ -39,17 +39,17 @@ public class VegetalMarin extends ObjetImmobile {
     */
     @Override
     public void evoluate(long dt) {
-                
-        this.moveY(Sediment.getInstance().getTop()-this.getBottom());
-        
+                        
         age++;
-        
+        vitalite--;
         if(age>=ageMax*0.5){
+            
             if(this.vitalite >= vitaliteMax*0.3){
  
                 this.clonage();
     
             }  
+            
         }
         
         if(this.age>=ageMax){
@@ -63,6 +63,7 @@ public class VegetalMarin extends ObjetImmobile {
   
         }
         
+        this.moveY(Lac.getInstance().getHeight()-Sediment.getInstance().quantiteCourante() - this.getBottom());
         
     }
 
@@ -72,7 +73,7 @@ public class VegetalMarin extends ObjetImmobile {
     @Override
     public void estMort() {
         
-        //Sediment.getInstance().addMatiere(10);
+        Sediment.getInstance().addMatiere(1);
         
         try {
             Lac.getInstance().remove(this);
@@ -108,7 +109,7 @@ public class VegetalMarin extends ObjetImmobile {
     public void clonage() {
    
         
-        Lac.getInstance().add(new VegetalMarin(this.getLeft() + 20, this.getTop()));
+        Lac.getInstance().add(new VegetalMarin(this.getLeft() + (int)(Math.random()*100)-50, this.getTop()));
         vitalite -= vitaliteMax*0.3;
  
     }

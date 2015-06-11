@@ -17,11 +17,11 @@ public abstract class ObjetDeplacable extends ObjetBase {
     /**
      * Attribut privé qui correspond à la vitalité d'un objet déplaçable.
      */
-    protected int vitalite = 100;
+    protected int vitalite;
     /**
      * Attribut privé qui correspond à la vitalité maximum qu'un objet déplaçable peut atteindre.
      */
-    protected int vitaliteMax = 100;
+    protected int vitaliteMax;
 
     /**
      * Initialise un objet déplaçable.     
@@ -31,6 +31,10 @@ public abstract class ObjetDeplacable extends ObjetBase {
      */
     public ObjetDeplacable(String nom, int x, int y) {
          super(nom, x, y);
+         
+         vitesseX = Math.random() * 10 - 5;
+         vitesseY = Math.random() * 10 - 5;
+         
     }
 
     /**

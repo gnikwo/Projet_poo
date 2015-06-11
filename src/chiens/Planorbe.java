@@ -20,9 +20,16 @@ public class Planorbe extends Detritivore {
         
         System.out.println("Nouveau Planorbe");
         
-        this.listePredateur.add(Type.Ecrevisse);
         this.listePredateur.add(Type.OtocinclusAffinis);
         
+       this.ageMax = 2000;
+       
+       this.tpsGestationMax=25;
+       this.tpsDepuisBas = 50;
+       this.tpsDepuisBasLimite = 30;
+      
+       this.vitalite = 2000;
+       this.vitaliteMax =2000;
     }
 
     /**
@@ -37,7 +44,6 @@ public class Planorbe extends Detritivore {
     @Override
     public void effect(Objet objet) {
         
-        System.out.println("A1");
         if((this.listeReproduction.contains(((ObjetBase)objet).getType()))) {
             
             if(this.phaseReprod()){
@@ -49,7 +55,6 @@ public class Planorbe extends Detritivore {
 
         }
         
-        System.out.println("A2");
         if(this.listeAlimentation.contains(((ObjetBase)objet).getType())){
             
             if(this.isHungry()){
@@ -59,13 +64,12 @@ public class Planorbe extends Detritivore {
             }
             
         } 
-        System.out.println("A3");
     }
 
     @Override
     protected void mettreBas() {
-      /*  l.add(new Planorbe(this.getLeft(), this.getTop()));
-        this.vitalite -= this.vitaliteMax*0.1;*/
+        l.add(new Planorbe(this.getLeft(), this.getTop()));
+        this.vitalite -= this.vitaliteMax*0.1;
     }
 
     @Override

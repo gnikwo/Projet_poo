@@ -13,7 +13,8 @@ public class Caneton extends Herbivore {
     */
    public Caneton( int x, int y) {
        super ( "Sprites/caneton", x, y);
-       this.vitesseX = -2;
+       
+       this.ageMax = 900;
    }
 
     /**
@@ -34,6 +35,20 @@ public class Caneton extends Herbivore {
     public void move(long dt){
         
         this.move(this.vitesseX, Math.sin(this.getMiddleX()/10)/2);
+        
+        if(this.getMiddleX() > Lac.getInstance().getWidth()){
+
+            System.out.println( this.getMiddleX() - Lac.getInstance().getWidth());
+            this.moveX(- (Lac.getInstance().getWidth()));
+
+        }
+        
+        if(this.getMiddleX() < 0){
+
+            this.moveX(Lac.getInstance().getWidth() - Math.abs(this.getMiddleX()));
+
+        }
+        
         
     }
      

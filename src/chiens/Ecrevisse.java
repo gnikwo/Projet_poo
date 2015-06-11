@@ -28,6 +28,15 @@ public class Ecrevisse extends Detritivore {
         
         listeReproduction.add(Type.Ecrevisse);
         
+        this.ageMax= 1800;
+        
+        this.tpsGestationMax=60;
+        this.tpsDepuisBas = 30;
+        this.tpsDepuisBasLimite = 20;
+        
+               
+       this.vitalite = 1800;
+       this.vitaliteMax = 1800;
     }
 
     /**

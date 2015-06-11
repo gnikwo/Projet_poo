@@ -98,6 +98,36 @@ public final class Lac extends World {
     /**
      * Renvoie l'objet de type t le pres
      * @param o
+     * @param t
+     * @return      
+     */
+    public ObjetBase plusPresRepro(ObjetBase o, ArrayList<Type> t) {
+        
+        double dist = this.getWidth();
+        int indice = 0;
+        
+        for(int i = 0; i < liste.size(); i++){
+            
+            if(this.liste.get(i).distance(o) < dist){
+                
+                if(t.contains(liste.get(i).getType()) && (((Animal)(liste.get(i))).getSexe() == Sexe.Male)){
+                    
+                    dist = this.liste.get(i).distance(o);
+                    indice = i;
+                    
+                }
+                
+            }
+                        
+        }
+              
+        return this.liste.get(indice);
+        
+    }
+    
+    /**
+     * Renvoie l'objet de type t le pres
+     * @param o
      * @param s
      * @return      
      */
@@ -110,10 +140,17 @@ public final class Lac extends World {
             
             if(this.liste.get(i).distance(o) < dist){
                 
-                if(s.equals(((Animal)(liste.get(i))).getSexe())){
+                try{
                     
-                    dist = this.liste.get(i).distance(o);
-                    indice = i;
+                    if(s.equals(((Animal)(liste.get(i))).getSexe())){
+
+                        dist = this.liste.get(i).distance(o);
+                        indice = i;
+
+                    }
+                    
+                }catch(Exception e){
+                    
                     
                 }
                 

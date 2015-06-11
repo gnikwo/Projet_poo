@@ -25,6 +25,16 @@ public class OtocinclusAffinis extends Omnivore {
         this.listePredateur.add(Type.GrandBrochet);
         this.listePredateur.add(Type.Maskinonge);
         
+
+        this.ageMax = 1200;
+        
+        this.tpsGestationMax = 50;
+        this.tpsDepuisBas = 40;
+        this.tpsDepuisBasLimite = 30;
+               
+       this.vitalite = 1200;
+       this.vitaliteMax =1200;
+        
     }
 
     /**
