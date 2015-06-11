@@ -64,7 +64,8 @@ public final class Sediment extends ObjetImmobile {
     @Override
     public void evoluate(long dt) {
         // Height = hauteur et Top = le dessus
-        moveY(Lac.getInstance().getHeight()-Sediment.getInstance().quantiteCourante());
+        //moveY(Lac.getInstance().getHeight()-Sediment.getInstance().quantiteCourante());
+        System.out.println("Sediment : " + this.getTop());
     }
     
     /**

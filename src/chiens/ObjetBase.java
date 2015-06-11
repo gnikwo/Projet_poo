@@ -31,6 +31,7 @@ public abstract class ObjetBase extends ObjetTouchable {
         
     public void estMange(){
 
+        Lac.getInstance().add(new Cadavre(this.getMiddleX(), this.getMiddleY()));
         try {
             Lac.getInstance().remove(this);
             this.finalize();
@@ -60,10 +61,9 @@ public abstract class ObjetBase extends ObjetTouchable {
      */
     public double distance(ObjetBase o) {
                 
-        double a = Math.sqrt(Math.pow(o.getMiddleX(),2) + Math.pow(o.getMiddleY(),2));
-        double b = Math.sqrt(Math.pow(this.getMiddleX(),2) + Math.pow(this.getMiddleY(),2));
-        
-        return Math.abs(a - b);
+        double a = Math.sqrt(Math.pow(o.getMiddleX()-this.getMiddleX(),2) + Math.pow(o.getMiddleY()-this.getMiddleY(),2));
+
+        return Math.abs(a);
     }
 
 }

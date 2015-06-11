@@ -21,19 +21,7 @@ public abstract class Omnivore extends Animal {
         super(nom, x, y);
         listeAlimentation.add(Type.VegetalMarin);
         listeAlimentation.add(Type.Planorbe);
-        
-             
-        listeReproduction.add(Type.OtocinclusAffinis);
 
     }
-
-    /**
-     * Action : effet d'une collision entre l'objet et le parametre
-     * @param o
-     */
-    @Override
-    public void effect(Objet o) {
-    }
-
 	
 }

@@ -80,13 +80,89 @@ public class Ecrevisse extends Detritivore {
     @Override
     protected void mettreBas() {  
     
-        l.add(new Ecrevisse(this.getLeft(), this.getTop()));
+        Lac.getInstance().add(new Ecrevisse(this.getLeft(), this.getTop()));
         this.vitalite -= this.vitaliteMax*0.1;
         
     }
 
     @Override
     public void move(long l) {
+        
+        ObjetBase predateur = Lac.getInstance().plusPresType(this, this.listePredateur);
+        ObjetBase proie = Lac.getInstance().plusPresType(this, this.listeAlimentation);
+        
+        double distPredateurX = predateur.getMiddleX() - this.getMiddleX();
+        double distPredateurY = predateur.getMiddleY() - this.getMiddleY();
+        
+        double distProieX = proie.getMiddleX() - this.getMiddleX();
+        double distProieY = proie.getMiddleY() - this.getMiddleY();
+        
+        if(this.distance(predateur) < 300){
+            
+            System.out.println(this.getType() + " preda : " + distPredateurX + " " + distPredateurY);
+            this.move(-distPredateurX/20, -distPredateurY/20);
+            if(vitesseX/vitesseY != -distPredateurX/-distPredateurY){
+                
+                vitesseX = -distPredateurX/100;
+                vitesseY = -distPredateurY/100;
+                
+            }
+                                        
+        }else if(this.distance(proie) < 200){
+            
+            this.move(distProieX/100, distProieY/100);
+            if(vitesseX/vitesseY != distProieX/distProieY){
+                
+                vitesseX = distProieX/100;
+                vitesseY = distProieY/100;
+                
+            }
+            
+        }else if(this.getSexe()== Sexe.Femelle){
+        
+            ObjetBase reproducteur = Lac.getInstance().plusPresRepro(this, this.listeReproduction);
+            double distReproducteurX = reproducteur.getMiddleX() - this.getMiddleX();
+            double distReproducteurY = reproducteur.getMiddleY() - this.getMiddleY();
+            
+            if(this.distance(reproducteur) < 200){
+                
+                if(this.phaseReprod()){
+                
+                    this.move(distReproducteurX/100, distReproducteurY/100);
+                    if(vitesseX/vitesseY != distReproducteurX/distReproducteurY){
+
+                        vitesseX = distReproducteurX/100;
+                        vitesseY = distReproducteurY/100;
+
+                    }
+                    
+                }else if(this.gestation()){
+                    
+                    this.move(-distReproducteurX/100, -distReproducteurY/100);
+                    if(vitesseX/vitesseY != -distReproducteurX/-distReproducteurY){
+
+                        vitesseX = -distReproducteurX/100;
+                        vitesseY = -distReproducteurY/100;
+
+                    }
+                    
+                }else{
+                
+                    this.move(vitesseX, vitesseY);
+                
+                }
+            
+            }else{
+                
+                this.move(vitesseX, vitesseY);
+                
+            }
+            
+        }else{
+            
+            this.move(vitesseX, vitesseY);
+            
+        }
         
         super.move(l);
         

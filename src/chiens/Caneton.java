@@ -1,5 +1,7 @@
 package chiens;
 
+import iut.Objet;
+
 /**
  * Classe permettant de creer des Canetons et de gerer tout ce qu'ils font ou peuvent faire.
  * Hérite de Herbivore.
@@ -52,6 +54,11 @@ public class Caneton extends Herbivore {
 
         }
         
+        
+    }
+
+    @Override
+    public void effect(Objet objet) {
         
     }
      

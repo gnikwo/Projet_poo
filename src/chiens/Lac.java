@@ -43,8 +43,8 @@ public final class Lac extends World {
     public void drawBackground(Graphics g) {
         
         try{
-        Image img = ImageIO.read(new File("src/Sprites/background.png"));
-        g.drawImage(img, 0, 0, this.width(), this.height(), this);
+            Image img = ImageIO.read(new File("src/Sprites/background.png"));
+            g.drawImage(img, 0, 0, this.width(), this.height(), this);
         }catch(IOException e){
         }
     }
@@ -129,42 +129,6 @@ public final class Lac extends World {
         
     }
     
-    /**
-     * Renvoie l'objet de type t le pres
-     * @param o
-     * @param s
-     * @return      
-     */
-    public ObjetBase plusPresSexe(ObjetBase o, Sexe s) {
-        
-        double dist = this.getWidth();
-        int indice = 0;
-        
-        for(int i = 0; i < liste.size(); i++){
-            
-            if(this.liste.get(i).distance(o) < dist){
-                
-                try{
-                    
-                    if(s.equals(((Animal)(liste.get(i))).getSexe())){
-
-                        dist = this.liste.get(i).distance(o);
-                        indice = i;
-
-                    }
-                    
-                }catch(Exception e){
-                    
-                    
-                }
-                
-            }
-                        
-        }
-              
-        return this.liste.get(indice);
-        
-    }
     
     /**
      *
@@ -226,7 +190,7 @@ public final class Lac extends World {
         this.add(new Planorbe((int)( this.getWidth()*0.9),(int)(this.getHeight()*0.8)));
         this.add(new Planorbe((int)( this.getWidth()*0.6),(int)(this.getHeight()*0.8)));
         
-        this.add(new OtocinclusAffinis((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.55)));;
+        this.add(new OtocinclusAffinis((int)( this.getWidth()*0.3),(int)(this.getHeight()*0.55)));
         this.add(new OtocinclusAffinis((int)( this.getWidth()*0.4),(int)(this.getHeight()*0.65)));
         this.add(new OtocinclusAffinis((int)( this.getWidth()*0.47),(int)(this.getHeight()*0.75)));
         this.add(new OtocinclusAffinis((int)( this.getWidth()*0.35),(int)(this.getHeight()*0.50)));
@@ -238,10 +202,7 @@ public final class Lac extends World {
         this.add(new VegetalMarin((int)( this.getWidth()*0.8),(int)(this.getHeight()*0.66)));
         this.add(new VegetalMarin((int)( this.getWidth()*0.10),(int)(this.getHeight()*0.66)));
         
-
-        
-        this.addMouseInteractiveObject(new MouseHandler());
-        
+        this.addMouseInteractiveObject(new MouseHandler());        
         
     }
 

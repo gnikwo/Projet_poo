@@ -69,7 +69,7 @@ public class Maskinonge extends Carnivore {
     protected void mettreBas() {
                 
         if(this.reproducteur.getType() == Type.GrandBrochet){
-            Lac.getInstance().add(new BrochetTigre(this.getLeft(), this.getTop()));
+            Lac.getInstance().add(new BrochetTigre(this.getLeft()+((int)(Math.random()*10))-5, this.getTop()+((int)(Math.random()*10))-5));
         }
         
         if(this.reproducteur.getType() == Type.Maskinonge){
@@ -83,7 +83,30 @@ public class Maskinonge extends Carnivore {
 
     @Override
     public void move(long l) {
+        
+        ObjetBase proie = Lac.getInstance().plusPresType(this, this.listeAlimentation);
+        
+        double distProieX = proie.getMiddleX() - this.getMiddleX();
+        double distProieY = proie.getMiddleY() - this.getMiddleY();
+        
+        if(this.distance(proie) < 200){
+            
+            this.move(distProieX/100, distProieY/100);
+            if(vitesseX/vitesseY != distProieX/distProieY){
+                
+                vitesseX = distProieX/100;
+                vitesseY = distProieY/100;
+                
+            }
+            
+        }else{
+            
+            this.move(vitesseX, vitesseY);
+            
+        }
+        
         super.move(l);
+        
     }
     
 

@@ -73,7 +73,7 @@ public class VegetalMarin extends ObjetImmobile {
     @Override
     public void estMort() {
         
-        Sediment.getInstance().addMatiere(1);
+       // Sediment.getInstance().addMatiere(1);
         
         try {
             Lac.getInstance().remove(this);
@@ -109,7 +109,7 @@ public class VegetalMarin extends ObjetImmobile {
     public void clonage() {
    
         
-        Lac.getInstance().add(new VegetalMarin(this.getLeft() + (int)(Math.random()*100)-50, this.getTop()));
+        Lac.getInstance().add(new VegetalMarin(this.getLeft() + (int)(Math.random()*300)-150, this.getTop()));
         vitalite -= vitaliteMax*0.3;
  
     }
