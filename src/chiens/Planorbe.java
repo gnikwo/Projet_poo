@@ -167,4 +167,5 @@ public class Planorbe extends Detritivore {
         super.move(l);
         
     }
+    
 }

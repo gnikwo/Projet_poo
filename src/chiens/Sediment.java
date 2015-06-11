@@ -15,11 +15,12 @@ public final class Sediment extends ObjetImmobile {
     /**
      * Attribut stockant la quantité de sédiment de type Integer.
      */
-    private int quantite = 100;
+    protected int quantite = 100;
     /**
      * Attribut stockant la quantité maximum de sédiment qu'il peut y avoir de
      * type Integer.
      */
+    private int quantiteMin = 10;
     private int quantiteMax = 10000;
     /**
      * Instancie sédiment.
@@ -59,8 +60,9 @@ public final class Sediment extends ObjetImmobile {
     @Override
     public void estMange() {
         
-        quantite -= 1;
-        
+            while (quantite>=quantiteMin){
+                quantite -= 1 ;
+            }
     }
 
     
