@@ -73,7 +73,7 @@ public class VegetalMarin extends ObjetImmobile {
     @Override
     public void estMort() {
         
-       // Sediment.getInstance().addMatiere(1);
+        Sediment.getInstance().addMatiere(10);
         
         try {
             Lac.getInstance().remove(this);

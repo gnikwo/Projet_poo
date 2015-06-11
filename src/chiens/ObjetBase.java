@@ -10,7 +10,6 @@ import java.util.logging.Logger;
  */
 public abstract class ObjetBase extends ObjetTouchable {
 	
-    protected Lac l;
     protected ArrayList<Type> listeAlimentation = new ArrayList<>();
 
     public ObjetBase(String nom, int x, int y) {
@@ -31,7 +30,6 @@ public abstract class ObjetBase extends ObjetTouchable {
         
     public void estMange(){
 
-        Lac.getInstance().add(new Cadavre(this.getMiddleX(), this.getMiddleY()));
         try {
             Lac.getInstance().remove(this);
             this.finalize();
@@ -64,6 +62,12 @@ public abstract class ObjetBase extends ObjetTouchable {
         double a = Math.sqrt(Math.pow(o.getMiddleX()-this.getMiddleX(),2) + Math.pow(o.getMiddleY()-this.getMiddleY(),2));
 
         return Math.abs(a);
+    }
+    
+    public boolean estAnimal(){
+        
+        return false;
+        
     }
 
 }

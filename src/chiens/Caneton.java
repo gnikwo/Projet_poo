@@ -43,7 +43,6 @@ public class Caneton extends Herbivore {
         
         if(this.getMiddleX() > Lac.getInstance().getWidth()){
 
-            System.out.println( this.getMiddleX() - Lac.getInstance().getWidth());
             this.moveX(- (Lac.getInstance().getWidth()));
 
         }

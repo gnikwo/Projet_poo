@@ -130,9 +130,9 @@ public abstract class Animal extends ObjetDeplacable {
      * @param o
      */
     public void seNourrit(ObjetBase o) {
-        this.vitalite += 1; // la vitalite augmente de 1
+        this.vitalite += 10; // la vitalite augmente de 1
         o.estMange(); // l'objet disparaît
-        this.hunger -= 1; // la faim diminue de 1
+        this.hunger -= 10; // la faim diminue de 1
     }
 
     /**
@@ -219,41 +219,10 @@ public abstract class Animal extends ObjetDeplacable {
         
     }
     
-    /**
-     * Deplace l'objet
-     * @param dt le temps écoulé en millisecondes depuis le precedent deplacement
-     */
     @Override
-    public void move(long dt) {
+    public boolean estAnimal(){
         
-        if(this.getMiddleX() > Lac.getInstance().getWidth()){
-
-            System.out.println( this.getMiddleX() - Lac.getInstance().getWidth());
-            this.moveX(- (Lac.getInstance().getWidth()));
-
-        }
-        
-        if(this.getMiddleX() < 0){
-
-            this.moveX(Lac.getInstance().getWidth() - Math.abs(this.getMiddleX()));
-
-        }
-
-        if(this.getTop() < 100){
-
-            this.moveY(100 - this.getTop());
-            this.vitesseY *= -1;
-
-
-        }
-
-        if(this.getBottom() > (Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante())){
-
-            this.moveY(Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante() - this.getBottom());
-            this.vitesseY *= -1;
-
-        }
-      
+        return true;
         
     }
     

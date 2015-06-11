@@ -15,7 +15,7 @@ public final class Sediment extends ObjetImmobile {
     /**
      * Attribut stockant la quantité de sédiment de type Integer.
      */
-    private int quantite = 10;
+    private int quantite = 100;
     /**
      * Attribut stockant la quantité maximum de sédiment qu'il peut y avoir de
      * type Integer.
@@ -49,7 +49,7 @@ public final class Sediment extends ObjetImmobile {
 
     
     @Override
-    public void estManger() {
+    public void estMange() {
         
         quantite -= 1;
         
@@ -64,7 +64,7 @@ public final class Sediment extends ObjetImmobile {
     @Override
     public void evoluate(long dt) {
         // Height = hauteur et Top = le dessus
-        //moveY(Lac.getInstance().getHeight()-Sediment.getInstance().quantiteCourante());
+        moveY(Lac.getInstance().getHeight()-Sediment.getInstance().quantite - this.getTop());
         System.out.println("Sediment : " + this.getTop());
     }
     

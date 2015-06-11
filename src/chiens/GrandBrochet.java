@@ -21,14 +21,17 @@ public class GrandBrochet extends Carnivore {
         super("Sprites/grand_brochet", x, y);
         this.sexe = ((int)(Math.random()*2)) > 0.5 ? Sexe.Male : Sexe.Femelle; //condition ternaire : (condition ? retourne ceci si vrai : cela si faux)
         
+        listeReproduction.add(Type.GrandBrochet);
+        listeReproduction.add(Type.Maskinonge);
+        
         this.ageMax=1200;
         
         this.tpsGestationMax=85;
         this.tpsDepuisBas = 50;
         this.tpsDepuisBasLimite = 40;
                
-       this.vitalite = 1200;
-       this.vitaliteMax =1200;
+        this.vitalite = 1200;
+        this.vitaliteMax =1200;
 
     }
 

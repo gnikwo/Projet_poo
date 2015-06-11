@@ -28,6 +28,9 @@ public class Planorbe extends Detritivore {
       
        this.vitalite = 2000;
        this.vitaliteMax =2000;
+       
+       this.sexe = Sexe.Hermaphrodite;
+       
     }
 
     /**
@@ -66,7 +69,7 @@ public class Planorbe extends Detritivore {
 
     @Override
     protected void mettreBas() {
-        l.add(new Planorbe(this.getLeft(), this.getTop()));
+        Lac.getInstance().add(new Planorbe(this.getLeft(), this.getTop()));
         this.vitalite -= this.vitaliteMax*0.1;
     }
 
@@ -84,7 +87,6 @@ public class Planorbe extends Detritivore {
         
         if(this.distance(predateur) < 300){
             
-            System.out.println(this.getType() + " preda : " + distPredateurX + " " + distPredateurY);
             this.move(-distPredateurX/20, 0);
             if(vitesseX/vitesseY != -distPredateurX/-distPredateurY){
                 

@@ -19,6 +19,9 @@ public class Maskinonge extends Carnivore {
         super("Sprites/maskinonge", x, y);
         this.sexe = ((int)(Math.random()*2)) > 0.5 ? Sexe.Male : Sexe.Femelle; //condition ternaire : (condition ? retourne ceci si vrai : cela si faux)
         
+        listeReproduction.add(Type.GrandBrochet);
+        listeReproduction.add(Type.Maskinonge);
+        
         this.ageMax = 1400;
         
         this.tpsGestationMax = 80 ;
@@ -26,8 +29,8 @@ public class Maskinonge extends Carnivore {
         this.tpsDepuisBasLimite = 40;
         
                
-       this.vitalite = 1400;
-       this.vitaliteMax =1400;
+        this.vitalite = 1400;
+        this.vitaliteMax =1400;
     }
 
     /**

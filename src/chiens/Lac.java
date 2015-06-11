@@ -215,40 +215,23 @@ public final class Lac extends World {
 
         @Override
         public void mouseDragged(MouseEvent e) {
+            //System.out.println("Mouse dragged");
         }
 
         @Override
         public void mouseMoved(MouseEvent e) {
-            
-            int x = e.getX();
-            int y = e.getY();
-            
-            for(int i = 0; i < Lac.getInstance().liste.size(); i++){
-                
-                ObjetBase o = Lac.getInstance().liste.get(i);
-                
-                if( x > o.getLeft() && x < o.getRight()){
-                    
-                    if( y > o.getBottom() && y < o.getTop()){
-                    
-                        System.out.println(o.getType());
-                        o.estMort();
-                    
-                    }   
-                    
-                }                
-                
-            }
-            
+            //System.out.println("Mouse moved");
         }
 
         @Override
         public void mouseClicked(MouseEvent e) {
              
+            
+            System.out.println("Mouse clicked");
+            
             int x = e.getX();
             int y = e.getY();
             
-            System.out.println("Mouse clicked at : " + x + " ; " + y);
             for(int i = 0; i < Lac.getInstance().liste.size(); i++){
                 
                 ObjetBase o = Lac.getInstance().liste.get(i);
@@ -257,8 +240,9 @@ public final class Lac extends World {
                     
                     if( y < o.getBottom() && y > o.getTop()){
                     
-                        System.out.println(o.getType());
-                        o.estMort();
+                         System.out.println("Ceci est un : " + o.getType());
+                        if(o.estAnimal())
+                            System.out.println("De sexe : " + ((Animal)o).getSexe());
                     
                     }   
                     
@@ -278,10 +262,13 @@ public final class Lac extends World {
         @Override
         public void mouseEntered(MouseEvent e) {
             
+            //System.out.println("Mouse entered");
+            
         }
 
         @Override
         public void mouseExited(MouseEvent e) {
+            //System.out.println("Mouse exited");
             
         }
     }

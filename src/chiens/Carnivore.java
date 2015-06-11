@@ -20,9 +20,6 @@ public abstract class Carnivore extends Animal {
         listeAlimentation.add(Type.OtocinclusAffinis);
         listeAlimentation.add(Type.Ecrevisse);
         
-        listeReproduction.add(Type.GrandBrochet);
-        listeReproduction.add(Type.Maskinonge);
-        
     }
     
 }

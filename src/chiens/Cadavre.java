@@ -38,12 +38,12 @@ public class Cadavre extends ObjetDeplacable {
     @Override
     public void evoluate(long dt) {
         
-        //vitalite--;
-       /* if(this.vitalite <= 0){
+        vitalite--;
+        if(this.vitalite <= 0){
             
             this.estMort();
             
-        }*/
+        }
         
     }
 
@@ -61,6 +61,9 @@ public class Cadavre extends ObjetDeplacable {
             this.moveY(Sediment.getInstance().getTop()-this.getBottom());
         
         this.move(-vitesseX, 0);
+        
+        super.move(dt);
+        
     }
 
     /**
@@ -78,8 +81,9 @@ public class Cadavre extends ObjetDeplacable {
     
     @Override
     public void estMort(){
+        
         System.out.println("Cadavre deviens sédiment");
-        //Sediment.getInstance().addMatiere(1);
+        Sediment.getInstance().addMatiere(10);
         
         try {
             Lac.getInstance().remove(this);

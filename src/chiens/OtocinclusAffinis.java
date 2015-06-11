@@ -93,9 +93,8 @@ public class OtocinclusAffinis extends Omnivore {
         double distProieX = proie.getMiddleX() - this.getMiddleX();
         double distProieY = proie.getMiddleY() - this.getMiddleY();
         
-        if(this.distance(predateur) < 300){
+        if(this.distance(predateur) < 200){
             
-            System.out.println(this.getType() + " preda : " + distPredateurX + " " + distPredateurY);
             this.move(-distPredateurX/20, -distPredateurY/20);
             if(vitesseX/vitesseY != -distPredateurX/-distPredateurY){
                 

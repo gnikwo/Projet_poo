@@ -99,7 +99,6 @@ public class Ecrevisse extends Detritivore {
         
         if(this.distance(predateur) < 300){
             
-            System.out.println(this.getType() + " preda : " + distPredateurX + " " + distPredateurY);
             this.move(-distPredateurX/20, -distPredateurY/20);
             if(vitesseX/vitesseY != -distPredateurX/-distPredateurY){
                 

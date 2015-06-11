@@ -84,4 +84,42 @@ public abstract class ObjetDeplacable extends ObjetBase {
     public int getVitaliteMax() {
             return this.vitaliteMax;
     }
+    
+    /**
+     * Deplace l'objet
+     * @param dt le temps écoulé en millisecondes depuis le precedent deplacement
+     */
+    @Override
+    public void move(long dt) {
+        
+        if(this.getMiddleX() > Lac.getInstance().getWidth()){
+
+            this.moveX(- (Lac.getInstance().getWidth()));
+
+        }
+        
+        if(this.getMiddleX() < 0){
+
+            this.moveX(Lac.getInstance().getWidth() - Math.abs(this.getMiddleX()));
+
+        }
+
+        if(this.getTop() < 100){
+
+            this.moveY(100 - this.getTop());
+            this.vitesseY *= -1;
+
+
+        }
+
+        if(this.getBottom() > (Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante())){
+
+            this.moveY(Lac.getInstance().getHeight() - Sediment.getInstance().quantiteCourante() - this.getBottom());
+            this.vitesseY *= -1;
+
+        }
+      
+        
+    }
+    
 }

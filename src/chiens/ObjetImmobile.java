@@ -17,8 +17,6 @@ public abstract class ObjetImmobile extends ObjetBase {
         super(nom, x, y);
     }
 
-    public void estManger() {
-    }
     
     /**
      * Déplace l'objet
