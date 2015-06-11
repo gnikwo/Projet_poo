@@ -5,5 +5,19 @@ package chiens;
  * @author ma951979
  */
 public enum Sexe {
-	Male, Femelle, Hermaphrodite;
+
+    /**
+     *
+     */
+    Male,
+
+    /**
+     *
+     */
+    Femelle,
+
+    /**
+     *
+     */
+    Hermaphrodite;
 }

@@ -6,5 +6,7 @@ package chiens;
  */
 
 public enum Alimentation {
-	Detritivore, Carnivore, Omnivore, Herbivore;
+
+
+    Detritivore, Carnivore, Omnivore, Herbivore;
 }

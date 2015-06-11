@@ -1,7 +1,5 @@
 package chiens;
 
-import iut.Objet;
-
 /**
  * Classe permettant de g�rer les detritivores tout ce qu'ils font ou peuvent faire.
  * 
@@ -9,6 +7,12 @@ import iut.Objet;
  */
 public abstract class Detritivore extends Animal {
 
+    /**
+     * @author ep298924, nb462425
+     * @param nom
+     * @param x
+     * @param y
+     */
     public Detritivore(String nom, int x, int y) {
         
         super(nom, x, y);

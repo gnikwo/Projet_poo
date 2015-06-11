@@ -123,6 +123,10 @@ public class VegetalMarin extends ObjetImmobile {
             return Type.VegetalMarin;
     }
 
+    /**
+     *
+     * @param objet
+     */
     @Override
     public void effect(Objet objet) {
     }

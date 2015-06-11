@@ -6,17 +6,27 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Classe permettant de g�rer les objetBase, c'est � dire tout les objets.
+ * Classe permettant de gérer les objetBase, c'est à dire tout les objets.
  */
 public abstract class ObjetBase extends ObjetTouchable {
 	
+    /**
+     *
+     */
     protected ArrayList<Type> listeAlimentation = new ArrayList<>();
 
+    /**
+     * @author tl
+     * @param nom
+     * @param x
+     * @param y
+     */
     public ObjetBase(String nom, int x, int y) {
         super(Lac.getInstance(),nom, x, y);
     }
 
     /**
+     * @author ma951979
      * Fonction qui verifie si l'objet de base est ou non un omnivore, en renvoyant true ou false.
      * @return 
      */
@@ -24,10 +34,17 @@ public abstract class ObjetBase extends ObjetTouchable {
         return listeAlimentation;
     }
 
+    /**
+     * @author ma951979
+     * @return
+     */
     public Type getType() {
         return null;
     }
         
+    /**
+     * @author tl
+     */
     public void estMange(){
 
         try {
@@ -39,6 +56,9 @@ public abstract class ObjetBase extends ObjetTouchable {
 
     }
     
+    /**
+     * @ author ma951979
+     */
     public void estMort(){
         System.out.println("est Mort");
         Lac.getInstance().add(new Cadavre(this.getMiddleX(), this.getMiddleY()));
@@ -54,6 +74,7 @@ public abstract class ObjetBase extends ObjetTouchable {
     
     /**
      * Renvoie la distance entre deux entit�s
+     * @author nb462425
      * @param o
      * @return 
      */
@@ -64,6 +85,10 @@ public abstract class ObjetBase extends ObjetTouchable {
         return Math.abs(a);
     }
     
+    /**
+     * @author ma951979
+     * @return
+     */
     public boolean estAnimal(){
         
         return false;

@@ -13,7 +13,7 @@ public class GrandBrochet extends Carnivore {
 
     /**
      * Constructeur de la classe GrandBrochet.
-     *
+     * @author ep298924,nb462425
      * @param x
      * @param y
      */
@@ -37,7 +37,7 @@ public class GrandBrochet extends Carnivore {
 
     /**
      * Permet d'accéder aux variables contenu dans l'énumération Type.
-     *
+     * @author ma951979
      * @return
      */
     @Override
@@ -45,6 +45,10 @@ public class GrandBrochet extends Carnivore {
         return Type.GrandBrochet;
     }
 
+    /**
+     * @author nb462425, ep298924 
+     * @param objet
+     */
     @Override
     public void effect(Objet objet) {
         
@@ -73,6 +77,7 @@ public class GrandBrochet extends Carnivore {
     }
 
     /**
+     * 
      * Créé un nouvel animal + fait consommer de l'énergie vitale à la mère
      */
     @Override

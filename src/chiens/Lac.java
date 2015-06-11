@@ -36,7 +36,7 @@ public final class Lac extends World {
 
     /**
      * Dessine le fond d'écran
-     *
+     *@author ep298924
      * @param g la surface d'affichage
      */
     @Override
@@ -50,7 +50,7 @@ public final class Lac extends World {
     }
 
     /**
-     *
+     *@author tl
      * @return
      */
     public static Lac getInstance(){
@@ -71,6 +71,7 @@ public final class Lac extends World {
     
     /**
      * Renvoie l'objet de type t le pres
+     * @author nb462425
      * @param o
      * @param t
      * @return      
@@ -101,6 +102,7 @@ public final class Lac extends World {
     
     /**
      * Renvoie l'objet de type t le pres
+     * @author nb462425
      * @param o
      * @param t
      * @return      
@@ -131,7 +133,7 @@ public final class Lac extends World {
     
     
     /**
-     *
+     * @author nb462425
      * @param o
      */
     @Override
@@ -141,7 +143,7 @@ public final class Lac extends World {
     }
    
     /**
-     *
+     * @author nb462425
      * @param o
      */
     @Override
@@ -155,6 +157,7 @@ public final class Lac extends World {
     
     /**
      * créé les objets de départ du monde
+     * @author tl 
      */
     @Override
     public void createObjects() {

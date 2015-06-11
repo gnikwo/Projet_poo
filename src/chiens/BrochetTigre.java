@@ -11,6 +11,7 @@ public class BrochetTigre extends Carnivore {
 
     /**
      * Constructeur de la classe BrochetTigre.
+     * @author ep298924, nb462425
      * @param x
      * @param y
      */
@@ -36,13 +37,18 @@ public class BrochetTigre extends Carnivore {
     
     /**
      * Permet d'accéder aux variables contenu dans l'énumération Type.
+     * @author ma951979
      * @return 
      */
     @Override
     public Type getType() {
-            return Type.BrochetTigre;
+        return Type.BrochetTigre;
     }
 
+    /**
+     * @author nb462425
+     * @param objet
+     */
     @Override
     public void effect(Objet objet) {
         

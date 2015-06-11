@@ -10,6 +10,7 @@ public abstract class Herbivore extends Animal {
 
     /**
      * Constructeur de la classe Herbivore
+     * @author ep298924
      * @param nom
      * @param x
      * @param y

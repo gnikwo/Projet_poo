@@ -43,20 +43,32 @@ public abstract class Animal extends ObjetDeplacable {
      */
     protected int tpsDepuisBas;
     /**
-     *
+     * Stocke le reproducteur
      */
     protected Animal reproducteur = null;
     /**
      * Stocke le degré de faim entre 0 et 100
      */
     protected int hunger = 100;
+
+    /**
+     * Permet de donner un sexe aux animaux
+     */
     protected Sexe sexe = null;
+
+    /**
+     * Permet de déterminer qui se reproduit avec qui
+     */
     protected ArrayList<Type> listeReproduction = new ArrayList<>();
+
+    /**
+     * Permet de déterminer qui mange qui
+     */
     protected ArrayList<Type> listePredateur = new ArrayList<>();
 
     /**
      * Constructeur de la classe animal
-     *
+     * @author ep298924
      * @param nom
      * @param x
      * @param y
@@ -68,7 +80,7 @@ public abstract class Animal extends ObjetDeplacable {
 
     /**
      * Indique si l'objet est en vie ou non
-     *
+     * @author ep298924
      * @return true si l'objet est en vie
      */
     @Override
@@ -80,7 +92,7 @@ public abstract class Animal extends ObjetDeplacable {
 
     /**
      * Fait évoluer l'objet
-     *
+     * @author nb462425
      * @param dt le temps écoulé depuis la dernière évolution (en ms)
      */
     @Override
@@ -126,7 +138,7 @@ public abstract class Animal extends ObjetDeplacable {
 
     /**
      * Lorsqu'un animal se nourrit, l'objet passé en paramètre disparait
-     *
+     * @author nb462425
      * @param o
      */
     public void seNourrit(ObjetBase o) {
@@ -137,7 +149,7 @@ public abstract class Animal extends ObjetDeplacable {
 
     /**
      * Action de reproduction
-     *
+     * @author tl
      * @param o
      */
     public void seReproduit(ObjetBase o) {
@@ -150,7 +162,7 @@ public abstract class Animal extends ObjetDeplacable {
 
     /**
      * Permet d'accéder à la variable d'instance age.
-     *
+     * @author ma951979
      * @return
      */
     protected int getAge() {
@@ -159,7 +171,7 @@ public abstract class Animal extends ObjetDeplacable {
 
     /**
      * Permet d'accéder à la variable d'instance sexe.
-     *
+     * @author tl 
      * @return
      */
     protected Sexe getSexe() {
@@ -168,7 +180,7 @@ public abstract class Animal extends ObjetDeplacable {
 
     /**
      * Permet d'accéder à la variable d'instance maturite.
-     *
+     * @author ma951979
      * @return
      */
     protected boolean getMaturite() {
@@ -177,7 +189,7 @@ public abstract class Animal extends ObjetDeplacable {
 
     /**
      * Permet d'accéder à la variable d'instance ageMax.
-     *
+     * @author ma951979
      * @return
      */
     protected int getAgeMax() {
@@ -187,7 +199,7 @@ public abstract class Animal extends ObjetDeplacable {
     /**
      * Permet de déterminer si l'animal femelle, quelque soit la race, porte
      * déjà un enfant ou non.
-     *
+     * @author tl
      * @return
      */
     protected boolean gestation() {
@@ -197,7 +209,7 @@ public abstract class Animal extends ObjetDeplacable {
     /**
      * Uniquement pour les femelles, permet de dire si elle est en phase de
      * reproduction ou non (période qui arrive tout les x temps (régulière))
-     *
+     * @author nb462425
      * @return
      */
     protected boolean phaseReprod() {
@@ -211,7 +223,7 @@ public abstract class Animal extends ObjetDeplacable {
 
     /**
      * fonction qui vérifie si l'animal a faim ou non.
-     *
+     * @author ma951979
      * @return
      */
     protected boolean isHungry() {
@@ -219,6 +231,11 @@ public abstract class Animal extends ObjetDeplacable {
         
     }
     
+    /**
+     * permet de savoir si l'objet est un animal
+     * @author nb462425
+     * @return
+     */
     @Override
     public boolean estAnimal(){
         

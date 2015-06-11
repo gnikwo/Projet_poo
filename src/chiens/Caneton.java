@@ -7,9 +7,10 @@ import iut.Objet;
  * Hérite de Herbivore.
  */
 public class Caneton extends Herbivore {
-//blablablubli
-    /**
+
+   /**
     * Constructeur de la classe Caneton.
+    * @author ma951979
     * @param x
     * @param y
     */
@@ -23,11 +24,12 @@ public class Caneton extends Herbivore {
 
     /**
     * Permet d'accéder aux variables contenu dans l'énuémration Type.
+    * @author ma951979
     * @return 
     */
    @Override
     public Type getType() {
-            return Type.Caneton;
+        return Type.Caneton;
     }
 
     @Override
@@ -56,6 +58,10 @@ public class Caneton extends Herbivore {
         
     }
 
+    /**
+     *
+     * @param objet
+     */
     @Override
     public void effect(Objet objet) {
         

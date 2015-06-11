@@ -12,6 +12,7 @@ public class Planorbe extends Detritivore {
 
     /**
      * Constructeur de la classe Planorbe.
+     * @author ep298924, nb462425
      * @param x
      * @param y
      */
@@ -35,6 +36,7 @@ public class Planorbe extends Detritivore {
 
     /**
      * Permet d'accéder aux variables contenu dans l'énumération Type.
+     * @author ma951979
      * @return 
      */
     @Override
@@ -42,6 +44,10 @@ public class Planorbe extends Detritivore {
         return Type.Planorbe;
     }
 
+    /**
+     * @author ma951979
+     * @param objet
+     */
     @Override
     public void effect(Objet objet) {
         

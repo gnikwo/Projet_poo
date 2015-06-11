@@ -33,21 +33,29 @@ public final class Sediment extends ObjetImmobile {
         super("Sprites/sediment",0, 0);
     }
 
+    /**
+     * @author ma951979
+     * @param q
+     */
     public void addMatiere(int q){
 
         quantite += q;
 
     }
     
-    
-    
+    /**
+     * @author tl
+     * @return
+     */
     public int quantiteCourante() {
         
         return this.quantite;
         
     }
 
-    
+    /**
+     * @author ma951979
+     */
     @Override
     public void estMange() {
         
@@ -60,6 +68,7 @@ public final class Sediment extends ObjetImmobile {
     /**
      * Fait évoluer l'objet
      * @param dt le temps écoulé depuis la dernière évolution (en ms)
+     * @author nb462425
      */
     @Override
     public void evoluate(long dt) {
@@ -71,6 +80,7 @@ public final class Sediment extends ObjetImmobile {
     /**
      * Indique si l'objet est en vie ou non
      * @return true si l'objet est en vie
+     * @author ep298924
      */
     @Override
     public boolean isAlive() {
@@ -82,6 +92,7 @@ public final class Sediment extends ObjetImmobile {
     /**
      * retourne l'attribut instance de type Sédiment.
      * @return 
+     * @author nb462425
      */
     public final static Sediment getInstance() {
         
@@ -93,13 +104,17 @@ public final class Sediment extends ObjetImmobile {
     /**
      * Permet d'accéder aux variables contenu dans l'énumération Type.
      * @return 
+     * @author ma951979
      */
     @Override
     public Type getType() {
         return Type.Sediment;
     }
     
-    
+    /**
+     *
+     * @param objet
+     */
     @Override
     public void effect(Objet objet) {
     }

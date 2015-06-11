@@ -11,6 +11,7 @@ public class OtocinclusAffinis extends Omnivore {
 
     /**
      * Constructeur de la classe OtocinclusAffinis.
+     * @author ep298924, nb462425
      * @param x
      * @param y
      */
@@ -38,6 +39,7 @@ public class OtocinclusAffinis extends Omnivore {
 
     /**
      * Permet d'accéder aux variables contenu dans l'énumération Type.
+     * @author ma951979
      * @return 
      */
     @Override
@@ -53,6 +55,10 @@ public class OtocinclusAffinis extends Omnivore {
         this.vitalite -= this.vitaliteMax*0.1;
     }
     
+    /**
+     * @author 462425
+     * @param objet
+     */
     @Override
     public void effect(Objet objet) {
             

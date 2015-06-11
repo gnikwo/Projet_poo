@@ -12,6 +12,7 @@ public class Maskinonge extends Carnivore {
 
     /**
      * Constructeur de la classe Maskinonge.
+     * @author nb462425, ep298924
      * @param x
      * @param y
      */
@@ -35,6 +36,7 @@ public class Maskinonge extends Carnivore {
 
     /**
      * Permet d'accéder aux variables contenu dans l'énumération Type.
+     * @author ma951979
      * @return 
      */
     @Override
@@ -42,6 +44,10 @@ public class Maskinonge extends Carnivore {
         return Type.Maskinonge;
     }
 
+    /**
+     * @author ep298924, nb462425
+     * @param objet
+     */
     @Override
     public void effect(Objet objet) {
 

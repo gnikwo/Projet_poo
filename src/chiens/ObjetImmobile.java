@@ -9,6 +9,7 @@ public abstract class ObjetImmobile extends ObjetBase {
 
     /**
      * Constructeur de la classe objetImmobile.
+     * @author ep298924
      * @param nom
      * @param x
      * @param y

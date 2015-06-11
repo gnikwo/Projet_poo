@@ -12,6 +12,7 @@ public class Ecrevisse extends Detritivore {
 
     /**
      * Constructeur de la classe Ecrevisse.
+     * @author ep298924, nb462425
      * @param x
      * @param y
      */
@@ -40,13 +41,18 @@ public class Ecrevisse extends Detritivore {
 
     /**
      * Permet d'accéder aux variables contenu dans l'énumération Type.
+     * @author ma951979
      * @return 
      */
     @Override
     public Type getType() {
-            return Type.Ecrevisse;
+        return Type.Ecrevisse;
     }
 
+    /**
+     * @author ep298924, nb462425
+     * @param objet
+     */
     @Override
     public void effect(Objet objet) {
             
@@ -74,8 +80,9 @@ public class Ecrevisse extends Detritivore {
         
     }
     
-    /**
+   /**
     * Créé un nouvel animal + fait consommer de l'énergie vitale à la mère
+    * @author nb462425
     */
     @Override
     protected void mettreBas() {  

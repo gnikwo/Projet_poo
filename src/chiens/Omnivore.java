@@ -1,8 +1,5 @@
 package chiens;
 
-import iut.World;
-import iut.Objet;
-
 /**
  * Classe permettant de g�rer les Omnivores tout ce qu'ils font ou peuvent faire.
  * 
@@ -12,6 +9,7 @@ public abstract class Omnivore extends Animal {
 
     /**
      * Constructeur de la classe Omnivore
+     * @author ep298924
      * @param nom
      * @param x
      * @param y

@@ -11,6 +11,7 @@ public class Cadavre extends ObjetDeplacable {
 
     /**
      * Constructeur de la classe cadavre.
+     * @author ep298924, nb462425
      * @param x
      * @param y
      */
@@ -22,6 +23,7 @@ public class Cadavre extends ObjetDeplacable {
 
     /**
      * Indique si l'objet est en vie ou non
+     * @author ep298924
      * @return true si l'objet est en vie
      */
     @Override
@@ -34,6 +36,7 @@ public class Cadavre extends ObjetDeplacable {
     /**
      * Fait évoluer l'objet
      * @param dt le temps écoulé depuis la dernière évolution (en ms)
+     * @author nb462425
      */
     @Override
     public void evoluate(long dt) {
@@ -50,6 +53,7 @@ public class Cadavre extends ObjetDeplacable {
     /**
      * Deplace l'objet
      * @param dt le temps ecoule en millisecondes depuis le precedent deplacement
+     * @author nb462425
      */
     @Override
     public void move(long dt) {
@@ -68,6 +72,7 @@ public class Cadavre extends ObjetDeplacable {
 
     /**
      * Permet d'acceder aux variables contenu dans l'enumeration Type.
+     * @author ma951979
      * @return 
      */
     @Override
@@ -75,14 +80,20 @@ public class Cadavre extends ObjetDeplacable {
         return Type.Cadavre;
     }
 
+    /**
+     *
+     * @param objet
+     */
     @Override
     public void effect(Objet objet) {
     }
     
+    /**
+     * @author nb462425
+     */
     @Override
     public void estMort(){
         
-        System.out.println("Cadavre deviens sédiment");
         Sediment.getInstance().addMatiere(10);
         
         try {

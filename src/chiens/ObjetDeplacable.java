@@ -24,7 +24,8 @@ public abstract class ObjetDeplacable extends ObjetBase {
     protected int vitaliteMax;
 
     /**
-     * Initialise un objet déplaçable.     
+     * Initialise un objet déplaçable.
+     * @author ep298924, nb462425
      * @param nom
      * @param x
      * @param y
@@ -39,6 +40,7 @@ public abstract class ObjetDeplacable extends ObjetBase {
 
     /**
      * Permet d'accéder à la variable d'instance vitesseX.
+     * @author tl
      * @return 
      */
     public double getVitesseX() {
@@ -47,6 +49,7 @@ public abstract class ObjetDeplacable extends ObjetBase {
 
     /**
      * Permet de modifier la valeur de la variable d'instance vitesseX.
+     * @author tl
      * @param vitesseX
      */
     public void setVitesseX(double vitesseX) {
@@ -55,6 +58,7 @@ public abstract class ObjetDeplacable extends ObjetBase {
 
     /**
      * Permet d'accéder à la variable d'instance vitesseY.
+     * @author tl
      * @return 
      */
     public double getVitesseY() {
@@ -63,6 +67,7 @@ public abstract class ObjetDeplacable extends ObjetBase {
 
     /**
      * Permet de modifier la valeur de la variable d'instance vitesseY.
+     * @author tl
      * @param vitesseY
      */
     public void setVitesseY(double vitesseY) {
@@ -71,6 +76,7 @@ public abstract class ObjetDeplacable extends ObjetBase {
 
     /**
      * Permet d'accéder à la vitalité de l'objet déplaçable.
+     * @author tl
      * @return 
      */
     public int getVitalite() {
@@ -79,6 +85,7 @@ public abstract class ObjetDeplacable extends ObjetBase {
 
     /**
      * Permet d'accéder à la vitalité maximum de l'objet déplaçable.
+     * @author tl
      * @return 
      */
     public int getVitaliteMax() {
@@ -88,6 +95,7 @@ public abstract class ObjetDeplacable extends ObjetBase {
     /**
      * Deplace l'objet
      * @param dt le temps écoulé en millisecondes depuis le precedent deplacement
+     * @author nb462425
      */
     @Override
     public void move(long dt) {
