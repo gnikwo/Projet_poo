@@ -7,53 +7,6 @@ package chiens;
 
 public enum Type {
 
-    /**
-     *
-     */
-    Maskinonge,
 
-    /**
-     *
-     */
-    GrandBrochet,
-
-    /**
-     *
-     */
-    OtocinclusAffinis,
-
-    /**
-     *
-     */
-    Planorbe,
-
-    /**
-     *
-     */
-    BrochetTigre,
-
-    /**
-     *
-     */
-    Ecrevisse,
-
-    /**
-     *
-     */
-    Caneton,
-
-    /**
-     *
-     */
-    Cadavre,
-
-    /**
-     *
-     */
-    VegetalMarin,
-
-    /**
-     *
-     */
-    Sediment;
+    Maskinonge, GrandBrochet, OtocinclusAffinis, Planorbe, BrochetTigre, Ecrevisse, Caneton, Cadavre, VegetalMarin, Sediment;
 }

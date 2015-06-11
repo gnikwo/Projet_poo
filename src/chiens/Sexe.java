@@ -6,18 +6,5 @@ package chiens;
  */
 public enum Sexe {
 
-    /**
-     *
-     */
-    Male,
-
-    /**
-     *
-     */
-    Femelle,
-
-    /**
-     *
-     */
-    Hermaphrodite;
+    Male, Femelle, Hermaphrodite;
 }

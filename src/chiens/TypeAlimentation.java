@@ -5,58 +5,8 @@ package chiens;
  */
 public enum TypeAlimentation {
 
-    /**
-     *
-     */
-    Maskinonge,
 
-    /**
-     *
-     */
-    GrandBrochet,
+    Maskinonge, GrandBrochet, OtocinclusAffinis, Planorbe,  BrochetTigre, Ecrevisse, Caneton, Cadavre, VegetalMarin, Sediment;
 
-    /**
-     *
-     */
-    OtocinclusAffinis,
-
-    /**
-     *
-     */
-    Planorbe,
-
-    /**
-     *
-     */
-    BrochetTigre,
-
-    /**
-     *
-     */
-    Ecrevisse,
-
-    /**
-     *
-     */
-    Caneton,
-
-    /**
-     *
-     */
-    Cadavre,
-
-    /**
-     *
-     */
-    VegetalMarin,
-
-    /**
-     *
-     */
-    Sediment;
-
-    /**
-     *
-     */
     public ObjetBase unnamed_ObjetBase_;
 }

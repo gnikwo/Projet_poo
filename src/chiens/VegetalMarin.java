@@ -24,6 +24,7 @@ public class VegetalMarin extends ObjetImmobile {
 
     /**
     * Constructeur de la classe VégetalMarin.
+    * @author ep298924
     * @param x
     * @param y
     */
@@ -36,6 +37,7 @@ public class VegetalMarin extends ObjetImmobile {
     /**
     * Fait évoluer l'objet
     * @param dt le temps écoulé depuis la dernière évolution (en ms)
+    * @author ep298924, nb462425
     */
     @Override
     public void evoluate(long dt) {
@@ -69,6 +71,7 @@ public class VegetalMarin extends ObjetImmobile {
 
     /**
     * Procédure permettant de faire mourir le végétal marin.
+    * @author ma951979
     */
     @Override
     public void estMort() {
@@ -88,6 +91,7 @@ public class VegetalMarin extends ObjetImmobile {
     /**
     * Indique si l'objet est en vie ou non
     * @return true si l'objet est en vie
+    * @author ep298924
     */
     @Override
     public boolean isAlive() {
@@ -105,6 +109,7 @@ public class VegetalMarin extends ObjetImmobile {
 
     /**
     * Permet à la plante de se reproduire, consomme 30% de son énergie vitale
+    * @author ep298924
     */
     public void clonage() {
    
@@ -117,6 +122,7 @@ public class VegetalMarin extends ObjetImmobile {
     /**
     * Permet d'accéder aux variables contenu dans l'énumération Type.
     * @return 
+    * @author ma951979
     */
     @Override
     public Type getType() {
