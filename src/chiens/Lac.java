@@ -239,13 +239,11 @@ public final class Lac extends World {
                 
                 ObjetBase o = Lac.getInstance().liste.get(i);
                 
-                if( x > o.getLeft() && x < o.getRight()){
+                if( (x > o.getLeft()) && (x < o.getRight())){
                     
-                    if( y < o.getBottom() && y > o.getTop()){
+                    if(( y < o.getBottom()) && (y > o.getTop())){
                     
-                         System.out.println("Ceci est un : " + o.getType());
-                        if(o.estAnimal())
-                            System.out.println("De sexe : " + ((Animal)o).getSexe());
+                        o.toggleInfo();
                     
                     }   
                     

@@ -94,7 +94,7 @@ public class Cadavre extends ObjetDeplacable {
     @Override
     public void estMort(){
         
-        Sediment.getInstance().addMatiere(10);
+        Sediment.getInstance().addMatiere(5);
         
         try {
             Lac.getInstance().remove(this);

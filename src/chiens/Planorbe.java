@@ -1,6 +1,8 @@
 package chiens;
 
 import iut.Objet;
+import java.awt.Color;
+import java.awt.Graphics;
 
 
 /**

@@ -1,5 +1,7 @@
 package chiens;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.util.ArrayList;
 
 /**
@@ -111,7 +113,7 @@ public abstract class Animal extends ObjetDeplacable {
             
             }
 
-            this.hunger--;
+            this.hunger-= 0.1;
 
             if(this.hunger <= 0){
 
@@ -144,7 +146,7 @@ public abstract class Animal extends ObjetDeplacable {
     public void seNourrit(ObjetBase o) {
         this.vitalite += 10; // la vitalite augmente de 1
         o.estMange(); // l'objet disparaît
-        this.hunger -= 10; // la faim diminue de 1
+        this.hunger += 30; // la faim diminue de 1
     }
 
     /**
@@ -227,7 +229,7 @@ public abstract class Animal extends ObjetDeplacable {
      * @return
      */
     protected boolean isHungry() {
-        return this.hunger < 90;
+        return this.hunger < 70;
         
     }
     
@@ -242,6 +244,36 @@ public abstract class Animal extends ObjetDeplacable {
         return true;
         
     }
+        
+    @Override
+    public void draw(Graphics g) throws Exception{
+        
+        super.draw(g);
+        
+        if(info){
+            g.setColor(new Color(10,10,10,50));
+            g.fillRect(this.getMiddleX(), this.getMiddleY(), (int)(this.getWidth()*1.5), (int)(this.getWidth()));
+            g.setColor(new Color(255,0,0));
+            
+            g.drawLine(this.getMiddleX(), this.getMiddleY(), (int)this.vitesseX*50 + this.getMiddleX(), (int)this.vitesseY*50 + this.getMiddleY());
+            
+            g.setColor(new Color(0,0,0));
+            g.drawString("Type : " + this.getType(), this.getMiddleX()+2, this.getMiddleY()+10);
+            g.drawString("Age : " + this.age + "/" + this.ageMax, this.getMiddleX()+2, this.getMiddleY()+20);
+            g.drawString("Vitalite : " + this.vitalite, this.getMiddleX()+2, this.getMiddleY()+30);
+            g.drawString("Hunger : " + this.hunger, this.getMiddleX()+2, this.getMiddleY()+40);
+            g.drawString("Sexe : " + this.sexe, this.getMiddleX()+2, this.getMiddleY()+50);
+            if(this.sexe.equals(Sexe.Femelle)){
+                
+                g.drawString("  Gestation : " + this.gestation, this.getMiddleX()+2, this.getMiddleY()+60);
+                g.drawString("  Temps gestation : " + this.tpsGestation + "/" + this.tpsGestationMax, this.getMiddleX()+2, this.getMiddleY()+70);
+                g.drawString("  Temps depuis bas : " + this.tpsDepuisBas+ "/" + this.tpsDepuisBasLimite, this.getMiddleX()+2, this.getMiddleY()+80);
+               
+            }
+        }
+        
+    }
+    
     
     
 }

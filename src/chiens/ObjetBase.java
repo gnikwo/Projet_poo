@@ -14,7 +14,8 @@ public abstract class ObjetBase extends ObjetTouchable {
      *
      */
     protected ArrayList<Type> listeAlimentation = new ArrayList<>();
-
+    protected boolean info = false;
+    
     /**
      * @author tl
      * @param nom
@@ -24,6 +25,14 @@ public abstract class ObjetBase extends ObjetTouchable {
     public ObjetBase(String nom, int x, int y) {
         super(Lac.getInstance(),nom, x, y);
     }
+    
+    
+    public void toggleInfo(){
+        
+        info = !info;
+        
+    }
+    
 
     /**
      * @author ma951979

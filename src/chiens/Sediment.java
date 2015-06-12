@@ -60,7 +60,7 @@ public final class Sediment extends ObjetImmobile {
     @Override
     public void estMange() {
         
-            while (quantite>=quantiteMin){
+            if(quantite>=quantiteMin){
                 quantite -= 1 ;
             }
     }

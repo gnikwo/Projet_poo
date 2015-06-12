@@ -1,6 +1,8 @@
 package chiens;
 
 import iut.Objet;
+import java.awt.Color;
+import java.awt.Graphics;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -76,7 +78,7 @@ public class VegetalMarin extends ObjetImmobile {
     @Override
     public void estMort() {
         
-        Sediment.getInstance().addMatiere(10);
+        Sediment.getInstance().addMatiere(5);
         
         try {
             Lac.getInstance().remove(this);
@@ -136,4 +138,24 @@ public class VegetalMarin extends ObjetImmobile {
     @Override
     public void effect(Objet objet) {
     }
+    
+     
+    @Override
+    public void draw(Graphics g) throws Exception{
+        
+        super.draw(g);
+        
+        if(info){
+            
+            g.setColor(new Color(10,10,10,50));
+            g.fillRect(this.getMiddleX(), this.getMiddleY(), (int)(this.getWidth()*1.5), (int)(this.getWidth()));
+            g.setColor(new Color(0,0,0));
+            g.drawString("Type : " + this.getType(), this.getMiddleX()+2, this.getMiddleY()+10);
+            g.drawString("Age : " + this.age + "/" + this.ageMax, this.getMiddleX()+2, this.getMiddleY()+20);
+            g.drawString("Vitalite : " + this.vitalite, this.getMiddleX()+2, this.getMiddleY()+30);
+            
+        }
+        
+    }
+    
 }
